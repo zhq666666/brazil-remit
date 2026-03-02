@@ -1,0 +1,55 @@
+---
+interface Props {
+  flag: string;
+  nameEn: string;
+  nameZh: string;
+  namePt?: string;
+  descEn: string;
+  descZh: string;
+  descPt?: string;
+  href: string;
+  externalHref?: string;
+  rate?: string;
+  currency?: string;
+}
+const { flag, nameEn, nameZh, namePt, descEn, descZh, descPt, href, externalHref, rate, currency } = Astro.props;
+---
+<div class="card group p-6 flex flex-col gap-4 border border-gray-100 hover:border-brazil-green transition-colors">
+  <div class="flex items-center gap-3">
+    <span class="text-4xl">{flag}</span>
+    <div>
+      <h3 class="font-display font-bold text-brazil-blue text-lg">
+        <span data-lang-content="en">{nameEn}</span>
+        <span data-lang-content="zh">{nameZh}</span>
+        <span data-lang-content="pt">{namePt}</span>
+      </h3>
+      {rate && currency && (
+        <p class="text-sm text-gray-400">1 BRL ≈ {rate} {currency}</p>
+      )}
+    </div>
+  </div>
+  <p class="text-gray-500 text-sm leading-relaxed flex-1">
+    <span data-lang-content="en">{descEn}</span>
+    <span data-lang-content="zh">{descZh}</span>
+    <span data-lang-content="pt">{descPt}</span>
+  </p>
+  <div class="flex flex-wrap gap-2">
+    <a href={href} class="flex-1 text-center px-4 py-2 bg-brazil-green text-white text-sm font-semibold rounded-lg hover:bg-brazil-green-dark transition-colors">
+      <span data-lang-content="en">Learn More</span>
+      <span data-lang-content="zh">了解更多</span>
+      <span data-lang-content="pt">Saiba Mais</span>
+    </a>
+    {externalHref && (
+      <a
+        href={externalHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex-1 text-center px-4 py-2 bg-brazil-yellow text-brazil-blue text-sm font-semibold rounded-lg hover:bg-yellow-300 transition-colors"
+      >
+        <span data-lang-content="en">Send Now</span>
+        <span data-lang-content="zh">立即汇款</span>
+        <span data-lang-content="pt">Enviar Agora</span>
+      </a>
+    )}
+  </div>
+</div>

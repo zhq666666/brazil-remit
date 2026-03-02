@@ -1,0 +1,49 @@
+---
+interface Props {
+  titleEn: string;
+  titleZh: string;
+  titlePt?: string;
+  excerptEn: string;
+  excerptZh: string;
+  excerptPt?: string;
+  date: string;
+  href: string;
+  image?: string;
+  tag?: string;
+}
+const { titleEn, titleZh, titlePt, excerptEn, excerptZh, excerptPt, date, href, image, tag } = Astro.props;
+---
+<article class="card group flex flex-col h-full">
+  {image && (
+    <div class="overflow-hidden h-48">
+      <img
+        src={image}
+        alt={titleEn}
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        loading="lazy"
+      />
+    </div>
+  )}
+  <div class="p-6 flex flex-col flex-1">
+    <div class="flex items-center gap-2 mb-3">
+      {tag && <span class="px-2 py-0.5 bg-green-100 text-brazil-green text-xs font-semibold rounded-full">{tag}</span>}
+      <time class="text-xs text-gray-400">{date}</time>
+    </div>
+    <h3 class="font-display font-semibold text-brazil-blue text-lg leading-snug mb-2 group-hover:text-brazil-green transition-colors">
+      <span data-lang-content="en">{titleEn}</span>
+      <span data-lang-content="zh">{titleZh}</span>
+      <span data-lang-content="pt">{titlePt}</span>
+    </h3>
+    <p class="text-gray-500 text-sm leading-relaxed flex-1">
+      <span data-lang-content="en">{excerptEn}</span>
+      <span data-lang-content="zh">{excerptZh}</span>
+      <span data-lang-content="pt">{excerptPt}</span>
+    </p>
+    <a href={href} class="mt-4 inline-flex items-center gap-1 text-brazil-green font-semibold text-sm hover:gap-2 transition-all">
+      <span data-lang-content="en">Read More</span>
+      <span data-lang-content="zh">阅读更多</span>
+      <span data-lang-content="pt">Leia Mais</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</article>

@@ -1,0 +1,419 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CountryCard from '../components/CountryCard.astro';
+import BlogCard from '../components/BlogCard.astro';
+---
+
+<Layout
+  title="Brazil International Remittance Guide — Send Money from Brazil"
+  description="Your #1 guide for international remittance from Brazil. Compare BRL exchange rates, fees, and services to send money to USA, China, UK, Hong Kong, Singapore & more."
+  keywords="Brazil remittance, send money from Brazil, BRL exchange rate, Brazil to USA transfer, Brazil to China transfer, Brazil to UK, Brazil to Hong Kong, international money transfer Brazil, BRL USD, BRL CNY, remittance guide Brazil, transferência internacional Brasil"
+  image="https://images.pexels.com/photos/2549018/pexels-photo-2549018.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop"
+  type="website"
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brazil-blue via-blue-900 to-brazil-blue min-h-[560px] flex items-center">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.pexels.com/photos/2549018/pexels-photo-2549018.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop"
+        alt="Brazil"
+        class="w-full h-full object-cover opacity-20"
+      />
+    </div>
+    <div class="absolute top-0 left-0 w-full h-1 bg-brazil-yellow"></div>
+    <div class="absolute bottom-0 left-0 w-full h-1 bg-brazil-green"></div>
+    <!-- Diamond shape overlay -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-5">
+      <div class="w-96 h-96 border-8 border-brazil-yellow rotate-45"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-brazil-yellow text-sm font-semibold px-4 py-2 rounded-full mb-6">
+        <span class="w-2 h-2 bg-brazil-yellow rounded-full animate-pulse"></span>
+        <span data-lang-content="en">Brazil's #1 Remittance Information Guide</span>
+        <span data-lang-content="zh">巴西第一汇款资讯指南</span>
+        <span data-lang-content="pt">O Guia Nº 1 de Remessas do Brasil</span>
+      </div>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        <span data-lang-content="en">Send Money from Brazil<br/><span class="text-brazil-yellow">with Confidence</span></span>
+        <span data-lang-content="zh">从巴西汇款<br/><span class="text-brazil-yellow">从容自信</span></span>
+        <span data-lang-content="pt">Envie Dinheiro do Brasil<br/><span class="text-brazil-yellow">com Confiança</span></span>
+      </h1>
+      <p class="text-blue-200 text-lg sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+        <span data-lang-content="en">Your complete guide to international remittance from Brazil — exchange rates, fees, destinations, and expert tips.</span>
+        <span data-lang-content="zh">巴西国际汇款完整指南——汇率、费用、目的地及专业建议。</span>
+        <span data-lang-content="pt">Seu guia completo de remessas internacionais do Brasil — taxas de câmbio, tarifas, destinos e dicas de especialistas.</span>
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/remittance/usa" class="btn-yellow">
+          <span data-lang-content="en">Explore Remittance Options</span>
+          <span data-lang-content="zh">探索汇款选项</span>
+          <span data-lang-content="pt">Explorar Opções de Remessa</span>
+        </a>
+        <a href="/today-brazil" class="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/30">
+          <span data-lang-content="en">Today's Brazil News</span>
+          <span data-lang-content="zh">今日巴西资讯</span>
+          <span data-lang-content="pt">Notícias do Brasil Hoje</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exchange Rate Ticker -->
+  <section class="bg-brazil-green py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center justify-between gap-4 text-white text-sm">
+        <p class="font-semibold opacity-80">
+          <span data-lang-content="en">BRL Indicative Rates</span>
+          <span data-lang-content="zh">雷亚尔参考汇率</span>
+          <span data-lang-content="pt">Taxas Indicativas BRL</span>
+        </p>
+        <div class="flex flex-wrap gap-6">
+          <span>🇺🇸 1 BRL = <strong>0.17 USD</strong></span>
+          <span>🇨🇳 1 BRL = <strong>1.25 CNY</strong></span>
+          <span>🇬🇧 1 BRL = <strong>0.14 GBP</strong></span>
+          <span>🇭🇰 1 BRL = <strong>1.34 HKD</strong></span>
+          <span>🇸🇬 1 BRL = <strong>0.23 SGD</strong></span>
+          <span>🇯🇵 1 BRL = <strong>25.8 JPY</strong></span>
+        </div>
+        <p class="text-xs opacity-60">
+          <span data-lang-content="en">Indicative only — Feb 25, 2026</span>
+          <span data-lang-content="zh">仅供参考 — 2026年2月25日</span>
+          <span data-lang-content="pt">Apenas indicativo — 25 fev. 2026</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Destinations -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="section-title">
+          <span data-lang-content="en">Top Remittance Destinations</span>
+          <span data-lang-content="zh">热门汇款目的地</span>
+          <span data-lang-content="pt">Principais Destinos de Remessa</span>
+        </h2>
+        <p class="section-subtitle">
+          <span data-lang-content="en">Send money from Brazil to these popular destinations</span>
+          <span data-lang-content="zh">从巴西汇款至这些热门目的地</span>
+          <span data-lang-content="pt">Envie dinheiro do Brasil para esses destinos populares</span>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <CountryCard
+          flag="🇺🇸"
+          nameEn="United States"
+          nameZh="美国"
+          namePt="Estados Unidos"
+          descEn="One of the largest Brazilian diaspora communities lives in the US. Send money to family, pay for education, or cover living expenses."
+          descZh="美国是巴西海外侨民最大的社区之一。向家人汇款、支付教育费用或生活开销。"
+          descPt="Uma das maiores comunidades brasileiras no exterior vive nos EUA. Envie dinheiro para a família, pague estudos ou cubra despesas de vida."
+          href="/remittance/usa"
+          externalHref="https://www.pandaremit.com/en/bra/send-money-to-unitedstates"
+          rate="0.17"
+          currency="USD"
+        />
+        <CountryCard
+          flag="🇨🇳"
+          nameEn="China"
+          nameZh="中国"
+          namePt="China"
+          descEn="Brazil and China share strong trade ties. Send BRL to CNY efficiently for business payments or family support."
+          descZh="巴西与中国贸易联系密切。高效地将雷亚尔换成人民币，用于商业付款或家庭汇款。"
+          descPt="Brasil e China têm laços comerciais fortes. Envie BRL para CNY de forma eficiente para pagamentos comerciais ou suporte familiar."
+          href="/remittance/china"
+          externalHref="https://www.pandaremit.com/en/bra/send-money-to-china"
+          rate="1.25"
+          currency="CNY"
+        />
+        <CountryCard
+          flag="🇭🇰"
+          nameEn="Hong Kong"
+          nameZh="香港"
+          namePt="Hong Kong"
+          descEn="Asia's financial hub with competitive exchange rates. Ideal for business transfers and investment purposes."
+          descZh="亚洲金融中心，汇率竞争力强。适合商业汇款和投资目的。"
+          descPt="Centro financeiro da Ásia com taxas de câmbio competitivas. Ideal para transferências comerciais e fins de investimento."
+          href="/remittance/hong-kong"
+          externalHref="https://www.pandaremit.com/en/bra/send-money-to-hongkong"
+          rate="1.34"
+          currency="HKD"
+        />
+        <CountryCard
+          flag="🇬🇧"
+          nameEn="United Kingdom"
+          nameZh="英国"
+          namePt="Reino Unido"
+          descEn="A large Brazilian community in the UK. Send money for study, living expenses, or to support loved ones."
+          descZh="英国有大量巴西侨民社区。汇款用于留学、生活费用或支持亲友。"
+          descPt="Grande comunidade brasileira no Reino Unido. Envie dinheiro para estudos, despesas de vida ou para apoiar entes queridos."
+          href="/remittance/uk"
+          externalHref="https://www.pandaremit.com/en/bra/send-money-to-unitedkingdom"
+          rate="0.14"
+          currency="GBP"
+        />
+        <CountryCard
+          flag="🇸🇬"
+          nameEn="Singapore"
+          nameZh="新加坡"
+          namePt="Singapura"
+          descEn="Southeast Asia's financial gateway. Send BRL to SGD for business, education, or family support."
+          descZh="东南亚金融门户。将雷亚尔汇至新加坡元，用于商业、教育或家庭支持。"
+          descPt="Portal financeiro do Sudeste Asiático. Envie BRL para SGD para negócios, educação ou suporte familiar."
+          href="/remittance/singapore"
+          externalHref="https://www.pandaremit.com/en/bra/send-money-to-singapore"
+          rate="0.23"
+          currency="SGD"
+        />
+        <CountryCard
+          flag="🇯🇵"
+          nameEn="Japan"
+          nameZh="日本"
+          namePt="Japão"
+          descEn="Brazil hosts the world's largest Japanese community outside Japan. Send money to relatives in Japan easily."
+          descZh="巴西拥有日本本土以外最大的日本侨民社区。轻松向日本的亲属汇款。"
+          descPt="O Brasil abriga a maior comunidade japonesa fora do Japão. Envie dinheiro para parentes no Japão facilmente."
+          href="/remittance/japan"
+          externalHref="https://www.pandaremit.com/en/bra/send-money-to-japan"
+          rate="25.8"
+          currency="JPY"
+        />
+        <CountryCard
+          flag="🇵🇹"
+          nameEn="Portugal"
+          nameZh="葡萄牙"
+          namePt="Portugal"
+          descEn="Brazil's historical connection with Portugal makes it a natural destination for remittances and family ties."
+          descZh="巴西与葡萄牙的历史渊源使其成为天然的汇款和家庭联系目的地。"
+          descPt="A conexão histórica do Brasil com Portugal torna este um destino natural para remessas e laços familiares."
+          href="/remittance/portugal"
+          rate="0.16"
+          currency="EUR"
+        />
+        <div class="card p-6 flex flex-col justify-center items-center text-center bg-gradient-to-br from-brazil-green to-brazil-green-dark text-white gap-3">
+          <span class="text-5xl">🌎</span>
+          <h3 class="font-display font-bold text-lg">
+            <span data-lang-content="en">More Destinations</span>
+            <span data-lang-content="zh">更多目的地</span>
+            <span data-lang-content="pt">Mais Destinos</span>
+          </h3>
+          <p class="text-sm text-green-100">
+            <span data-lang-content="en">Explore all remittance options from Brazil</span>
+            <span data-lang-content="zh">探索巴西的所有汇款选项</span>
+            <span data-lang-content="pt">Explore todas as opções de remessa do Brasil</span>
+          </p>
+          <a href="/remittance/usa" class="mt-2 px-4 py-2 bg-white text-brazil-green font-semibold text-sm rounded-lg hover:bg-green-50 transition-colors">
+            <span data-lang-content="en">View All</span>
+            <span data-lang-content="zh">查看全部</span>
+            <span data-lang-content="pt">Ver Todos</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="section-title">
+            <span data-lang-content="en">Why Use a Reliable Remittance Service?</span>
+            <span data-lang-content="zh">为什么选择可靠的汇款服务？</span>
+            <span data-lang-content="pt">Por Que Usar um Serviço de Remessa Confiável?</span>
+          </h2>
+          <p class="text-gray-500 mb-8">
+            <span data-lang-content="en">When sending money from Brazil abroad, the right service saves you time and money.</span>
+            <span data-lang-content="zh">从巴西向海外汇款时，选择正确的服务可以为您节省时间和金钱。</span>
+            <span data-lang-content="pt">Ao enviar dinheiro do Brasil para o exterior, o serviço certo economiza seu tempo e dinheiro.</span>
+          </p>
+          <div class="space-y-5">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-brazil-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brazil-blue mb-1">
+                  <span data-lang-content="en">Competitive Rates</span>
+                  <span data-lang-content="zh">竞争性汇率</span>
+                  <span data-lang-content="pt">Taxas Competitivas</span>
+                </h3>
+                <p class="text-gray-500 text-sm">
+                  <span data-lang-content="en">Compare services to get the best BRL exchange rates with minimal fees.</span>
+                  <span data-lang-content="zh">比较各类服务，以最低费用获得最佳雷亚尔汇率。</span>
+                  <span data-lang-content="pt">Compare serviços para obter as melhores taxas de câmbio do BRL com taxas mínimas.</span>
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brazil-blue mb-1">
+                  <span data-lang-content="en">Fast Transfers</span>
+                  <span data-lang-content="zh">快速转账</span>
+                  <span data-lang-content="pt">Transferências Rápidas</span>
+                </h3>
+                <p class="text-gray-500 text-sm">
+                  <span data-lang-content="en">Many modern services offer same-day or next-day international transfers.</span>
+                  <span data-lang-content="zh">许多现代服务提供当日或次日国际转账。</span>
+                  <span data-lang-content="pt">Muitos serviços modernos oferecem transferências internacionais no mesmo dia ou no dia seguinte.</span>
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-brazil-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brazil-blue mb-1">
+                  <span data-lang-content="en">Safe & Regulated</span>
+                  <span data-lang-content="zh">安全合规</span>
+                  <span data-lang-content="pt">Seguro e Regulamentado</span>
+                </h3>
+                <p class="text-gray-500 text-sm">
+                  <span data-lang-content="en">Choose services regulated by Banco Central do Brasil for maximum security.</span>
+                  <span data-lang-content="zh">选择巴西中央银行监管的服务，确保最高安全性。</span>
+                  <span data-lang-content="pt">Escolha serviços regulamentados pelo Banco Central do Brasil para máxima segurança.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img
+            src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+            alt="Digital finance"
+            class="rounded-2xl shadow-2xl w-full object-cover h-80"
+          />
+          <div class="absolute -bottom-6 -left-6 bg-brazil-yellow rounded-2xl p-4 shadow-xl">
+            <p class="text-brazil-blue font-bold text-2xl">R$5B+</p>
+            <p class="text-brazil-blue text-xs font-medium">
+              <span data-lang-content="en">sent from Brazil yearly</span>
+              <span data-lang-content="zh">每年从巴西汇出</span>
+              <span data-lang-content="pt">enviados do Brasil por ano</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Today's Brazil Blog -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+        <div>
+          <h2 class="section-title">
+            <span data-lang-content="en">Today's Brazil</span>
+            <span data-lang-content="zh">今日巴西</span>
+            <span data-lang-content="pt">Brasil Hoje</span>
+          </h2>
+          <p class="section-subtitle">
+            <span data-lang-content="en">Latest news and insights on Brazilian remittance</span>
+            <span data-lang-content="zh">巴西汇款最新资讯与见解</span>
+            <span data-lang-content="pt">Últimas notícias e informações sobre remessas brasileiras</span>
+          </p>
+        </div>
+        <a href="/today-brazil" class="btn-primary whitespace-nowrap self-start sm:self-auto mb-2">
+          <span data-lang-content="en">View All Posts</span>
+          <span data-lang-content="zh">查看全部文章</span>
+          <span data-lang-content="pt">Ver Todos os Posts</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <BlogCard
+          titleEn="Brazil's Diaspora and the Remittance Lifeline"
+          titleZh="巴西海外侨民与汇款生命线"
+          titlePt="A Diáspora Brasileira e a Linha de Vida das Remessas"
+          excerptEn="Millions of Brazilians living abroad send money home every year, creating a vital economic lifeline for families across the country."
+          excerptZh="数百万在海外生活的巴西人每年都会向国内汇款，为全国各地的家庭创造了重要的经济生命线。"
+          excerptPt="Milhões de brasileiros vivendo no exterior enviam dinheiro para casa todo ano, criando uma vital linha de vida econômica para famílias em todo o país."
+          date="Feb 25, 2026"
+          href="/today-brazil/feb-25"
+          image="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+          tag="Remittance"
+        />
+        <BlogCard
+          titleEn="PIX Goes International: Brazil's Payment Revolution"
+          titleZh="PIX走向国际：巴西的支付革命"
+          titlePt="PIX vai Internacional: A Revolução dos Pagamentos do Brasil"
+          excerptEn="Brazil's instant payment system PIX is expanding internationally, opening new avenues for faster and cheaper cross-border money transfers."
+          excerptZh="巴西即时支付系统PIX正在向国际扩展，为更快速、更廉价的跨境汇款开辟了新途径。"
+          excerptPt="O sistema de pagamento instantâneo PIX do Brasil está se expandindo internacionalmente, abrindo novas vias para transferências internacionais mais rápidas e baratas."
+          date="Feb 24, 2026"
+          href="/today-brazil/feb-24"
+          image="https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+          tag="Technology"
+        />
+        <BlogCard
+          titleEn="Carnival, Culture & Currency: Brazil's Economic Heartbeat"
+          titleZh="狂欢节、文化与货币：巴西的经济脉搏"
+          titlePt="Carnaval, Cultura e Câmbio: O Pulso Econômico do Brasil"
+          excerptEn="Brazil's world-famous Carnival isn't just a cultural celebration — it's a major economic event that impacts tourism, spending, and international transfers."
+          excerptZh="巴西举世闻名的狂欢节不仅是文化庆典，更是影响旅游、消费和国际汇款的重大经济事件。"
+          excerptPt="O famoso Carnaval do Brasil não é apenas uma celebração cultural — é um grande evento econômico que impacta turismo, gastos e transferências internacionais."
+          date="Feb 23, 2026"
+          href="/today-brazil/feb-23"
+          image="https://images.pexels.com/photos/3293148/pexels-photo-3293148.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+          tag="Culture"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- PandaRemit CTA Banner -->
+  <section class="py-16 bg-brazil-blue">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl font-bold text-white mb-4">
+        <span data-lang-content="en">Ready to Send Money from Brazil?</span>
+        <span data-lang-content="zh">准备从巴西汇款了吗？</span>
+        <span data-lang-content="pt">Pronto para Enviar Dinheiro do Brasil?</span>
+      </h2>
+      <p class="text-blue-200 mb-8">
+        <span data-lang-content="en">Compare rates and send money to China, USA, Hong Kong, UK, and more with competitive exchange rates.</span>
+        <span data-lang-content="zh">比较汇率，以具竞争力的汇率向中国、美国、香港、英国等地汇款。</span>
+        <span data-lang-content="pt">Compare taxas e envie dinheiro para China, EUA, Hong Kong, Reino Unido e mais com taxas de câmbio competitivas.</span>
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a
+          href="https://www.pandaremit.com/en/bra/send-money-to-china"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-yellow"
+        >
+          🇨🇳
+          <span data-lang-content="en">Send to China</span>
+          <span data-lang-content="zh">汇款至中国</span>
+          <span data-lang-content="pt">Enviar para China</span>
+        </a>
+        <a
+          href="https://www.pandaremit.com/en/bra/send-money-to-unitedstates"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/30"
+        >
+          🇺🇸
+          <span data-lang-content="en">Send to USA</span>
+          <span data-lang-content="zh">汇款至美国</span>
+          <span data-lang-content="pt">Enviar para EUA</span>
+        </a>
+        <a
+          href="https://www.pandaremit.com/en/bra/send-money-to-hongkong"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-white/30"
+        >
+          🇭🇰
+          <span data-lang-content="en">Send to HK</span>
+          <span data-lang-content="zh">汇款至香港</span>
+          <span data-lang-content="pt">Enviar para HK</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

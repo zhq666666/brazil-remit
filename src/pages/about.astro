@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About BrazilRemit — Brazil International Remittance Information"
+  description="Learn about BrazilRemit, your trusted source for accurate Brazil remittance information. We provide BRL exchange rate analysis, service comparisons, and expert guides."
+  keywords="about BrazilRemit, Brazil remittance guide, BRL exchange rates information, money transfer Brazil, Brazilian remittance resource, international transfer Brazil guide"
+  image="https://images.pexels.com/photos/2549018/pexels-photo-2549018.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop"
+  type="website"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brazil-blue to-blue-900 py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
+        <span data-lang-content="en">About Us</span>
+        <span data-lang-content="zh">关于我们</span>
+        <span data-lang-content="pt">Sobre Nós</span>
+      </h1>
+      <p class="text-blue-200 text-xl">
+        <span data-lang-content="en">Your trusted source for Brazil remittance information</span>
+        <span data-lang-content="zh">您信赖的巴西汇款资讯来源</span>
+        <span data-lang-content="pt">Sua fonte confiável de informações sobre remessas do Brasil</span>
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Mission -->
+    <section class="mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-brazil-green rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h2 class="font-display text-2xl font-bold text-brazil-blue">
+          <span data-lang-content="en">Our Mission</span>
+          <span data-lang-content="zh">我们的使命</span>
+          <span data-lang-content="pt">Nossa Missão</span>
+        </h2>
+      </div>
+      <div class="bg-green-50 border-l-4 border-brazil-green rounded-r-2xl p-6">
+        <p class="text-gray-700 leading-relaxed text-lg">
+          <span data-lang-content="en">We are dedicated to helping Brazilians and those living in Brazil navigate the complex world of international money transfers. Our platform provides accurate, up-to-date information about sending money from Brazil to major destinations worldwide.</span>
+          <span data-lang-content="zh">我们致力于帮助巴西人及在巴西生活的人们，驾驭复杂的国际汇款世界。我们的平台提供准确、最新的资讯，涵盖从巴西向全球主要目的地汇款的相关内容。</span>
+          <span data-lang-content="pt">Somos dedicados a ajudar brasileiros e pessoas que vivem no Brasil a navegar no complexo mundo das transferências internacionais. Nossa plataforma fornece informações precisas e atualizadas sobre como enviar dinheiro do Brasil para os principais destinos do mundo.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- What We Cover -->
+    <section class="mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-brazil-yellow rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-brazil-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h2 class="font-display text-2xl font-bold text-brazil-blue">
+          <span data-lang-content="en">What We Cover</span>
+          <span data-lang-content="zh">我们涵盖的内容</span>
+          <span data-lang-content="pt">O Que Cobrimos</span>
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 gap-3">
+        {[
+          { en: 'Exchange rate analysis and trends for BRL against major currencies', zh: '巴西雷亚尔对主要货币的汇率分析与趋势', pt: 'Análise e tendências das taxas de câmbio do BRL frente às principais moedas' },
+          { en: 'Comparison of remittance services available from Brazil', zh: '巴西可用汇款服务的比较', pt: 'Comparação de serviços de remessa disponíveis no Brasil' },
+          { en: 'Country-specific guides for popular remittance destinations', zh: '热门汇款目的地的国家专项指南', pt: 'Guias específicos por país para destinos de remessa populares' },
+          { en: 'News and updates affecting Brazilian international transfers', zh: '影响巴西国际转账的新闻与最新动态', pt: 'Notícias e atualizações que afetam as transferências internacionais brasileiras' },
+          { en: 'Tips for saving money on fees and exchange rate margins', zh: '节省费用和汇率差价的小贴士', pt: 'Dicas para economizar em taxas e margens de câmbio' },
+          { en: 'Cultural and economic context behind remittance patterns', zh: '汇款模式背后的文化与经济背景', pt: 'Contexto cultural e econômico por trás dos padrões de remessa' },
+        ].map((item) => (
+          <div class="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:border-brazil-green transition-colors">
+            <div class="w-6 h-6 bg-brazil-green rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <p class="text-gray-700">
+              <span data-lang-content="en">{item.en}</span>
+              <span data-lang-content="zh">{item.zh}</span>
+              <span data-lang-content="pt">{item.pt}</span>
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-brazil-blue rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h2 class="font-display text-2xl font-bold text-brazil-blue">
+          <span data-lang-content="en">Our Values</span>
+          <span data-lang-content="zh">我们的价值观</span>
+          <span data-lang-content="pt">Nossos Valores</span>
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm text-center">
+          <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brazil-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-bold text-brazil-blue mb-2">
+            <span data-lang-content="en">Accuracy</span>
+            <span data-lang-content="zh">准确性</span>
+            <span data-lang-content="pt">Precisão</span>
+          </h3>
+          <p class="text-gray-500 text-sm">
+            <span data-lang-content="en">We strive to provide the most accurate and current information available.</span>
+            <span data-lang-content="zh">我们努力提供最准确、最新的可用信息。</span>
+            <span data-lang-content="pt">Nos esforçamos para fornecer as informações mais precisas e atuais disponíveis.</span>
+          </p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm text-center">
+          <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          </div>
+          <h3 class="font-bold text-brazil-blue mb-2">
+            <span data-lang-content="en">Transparency</span>
+            <span data-lang-content="zh">透明度</span>
+            <span data-lang-content="pt">Transparência</span>
+          </h3>
+          <p class="text-gray-500 text-sm">
+            <span data-lang-content="en">We clearly explain fees, rates, and any limitations of services we discuss.</span>
+            <span data-lang-content="zh">我们清晰解释我们讨论的服务的费用、汇率及任何限制。</span>
+            <span data-lang-content="pt">Explicamos claramente as tarifas, taxas e limitações dos serviços que discutimos.</span>
+          </p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm text-center">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brazil-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+          </div>
+          <h3 class="font-bold text-brazil-blue mb-2">
+            <span data-lang-content="en">Accessibility</span>
+            <span data-lang-content="zh">可及性</span>
+            <span data-lang-content="pt">Acessibilidade</span>
+          </h3>
+          <p class="text-gray-500 text-sm">
+            <span data-lang-content="en">Our content is available in English, Chinese and Portuguese to serve diverse communities.</span>
+            <span data-lang-content="zh">我们的内容提供英文和中文版本，服务多元社区。</span>
+            <span data-lang-content="pt">Nosso conteúdo está disponível em inglês, chinês e português para servir comunidades diversas.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+      <h3 class="font-semibold text-gray-700 mb-2">
+        <span data-lang-content="en">Disclaimer</span>
+        <span data-lang-content="zh">免责声明</span>
+        <span data-lang-content="pt">Aviso Legal</span>
+      </h3>
+      <p class="text-gray-500 text-sm leading-relaxed">
+        <span data-lang-content="en">BrazilRemit is an informational website only. We do not provide financial advice, and we are not a licensed money transfer operator. Exchange rates and fees displayed are indicative and may differ from actual rates offered by service providers. Always conduct your own research and verify details with your chosen service provider before making any transfer.</span>
+        <span data-lang-content="zh">BrazilRemit仅为资讯性网站。我们不提供财务建议，也不是持牌汇款运营商。显示的汇率和费用仅供参考，可能与服务提供商实际提供的汇率不同。在进行任何转账之前，请务必进行独立研究，并向您选择的服务提供商核实详情。</span>
+        <span data-lang-content="pt">O BrazilRemit é apenas um site informativo. Não fornecemos aconselhamento financeiro e não somos uma operadora de transferência de dinheiro licenciada. As taxas de câmbio e tarifas exibidas são indicativas e podem diferir das taxas reais oferecidas pelos prestadores de serviços. Sempre faça sua própria pesquisa e verifique os detalhes com o prestador de serviços escolhido antes de fazer qualquer transferência.</span>
+      </p>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+/* Language switching */
+html[data-lang="en"] [data-lang-content="zh"] { display: none !important; }
+html[data-lang="en"] [data-lang-content="pt"] { display: none !important; }
+html[data-lang="zh"] [data-lang-content="en"] { display: none !important; }
+html[data-lang="zh"] [data-lang-content="pt"] { display: none !important; }
+html[data-lang="pt"] [data-lang-content="en"] { display: none !important; }
+html[data-lang="pt"] [data-lang-content="zh"] { display: none !important; }
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 bg-white;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 bg-brazil-green text-white font-semibold rounded-lg hover:bg-brazil-green-dark transition-colors duration-200;
+  }
+  .btn-yellow {
+    @apply inline-flex items-center px-6 py-3 bg-brazil-yellow text-brazil-blue font-semibold rounded-lg hover:bg-yellow-400 transition-colors duration-200;
+  }
+  .section-title {
+    @apply font-display text-3xl font-bold text-brazil-blue mb-3;
+  }
+  .section-subtitle {
+    @apply text-gray-500 text-lg mb-10;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+  }
+  .flag-stripe {
+    @apply h-1 w-full;
+    background: linear-gradient(to right, #009C3B 33%, #FFDF00 33%, #FFDF00 66%, #002776 66%);
+  }
+}

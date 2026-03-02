@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getArticlesBySection } from '../../lib/supabase';
+
+const posts = await getArticlesBySection('today-brazil');
+---
+
+<Layout
+  title="Today's Brazil — Daily Remittance & Finance News"
+  description="Daily news and insights on Brazilian remittance, BRL exchange rates, and financial trends. Stay informed about sending money from Brazil in 2026."
+  keywords="Brazil remittance news 2026, BRL exchange rate today, today Brazil finance, Brazil money transfer news, Brazil economic news, Brazilian real news, Brazil forex"
+  image="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop"
+  type="website"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-brazil-blue to-blue-900 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 bg-brazil-green/20 text-brazil-yellow text-sm font-semibold px-4 py-2 rounded-full mb-4">
+        <span class="w-2 h-2 bg-brazil-yellow rounded-full"></span>
+        <span data-lang-content="en">Feb 20 – Feb 25, 2026</span>
+        <span data-lang-content="zh">2026年2月20日 – 2月25日</span>
+        <span data-lang-content="pt">20 fev – 25 fev. 2026</span>
+      </div>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
+        <span data-lang-content="en">Today's Brazil</span>
+        <span data-lang-content="zh">今日巴西</span>
+        <span data-lang-content="pt">Brasil Hoje</span>
+      </h1>
+      <p class="text-blue-200 text-lg">
+        <span data-lang-content="en">Daily insights on Brazilian remittance, exchange rates, and financial culture</span>
+        <span data-lang-content="zh">关于巴西汇款、汇率和金融文化的每日见解</span>
+        <span data-lang-content="pt">Informações diárias sobre remessas brasileiras, taxas de câmbio e cultura financeira</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {posts.length === 0 ? (
+        <p class="text-center text-gray-400 py-16">No articles found.</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((post) => (
+            <BlogCard
+              titleEn={post.title_en}
+              titleZh={post.title_zh}
+              titlePt={post.title_pt}
+              excerptEn={post.excerpt_en}
+              excerptZh={post.excerpt_zh}
+              excerptPt={post.excerpt_pt}
+              date={new Date(post.published_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+              href={`/today-brazil/${post.slug}`}
+              image={post.image_url}
+              tag={post.tag}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>

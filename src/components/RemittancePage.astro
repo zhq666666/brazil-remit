@@ -1,0 +1,215 @@
+---
+interface Props {
+  flag: string;
+  countryEn: string;
+  countryZh: string;
+  countryPt?: string;
+  currencyCode: string;
+  currencyNameEn: string;
+  currencyNameZh: string;
+  rate: string;
+  externalHref?: string;
+  heroImage: string;
+  overviewEn: string;
+  overviewZh: string;
+  overviewPt?: string;
+  tip1En: string;
+  tip1Zh: string;
+  tip1Pt?: string;
+  tip2En: string;
+  tip2Zh: string;
+  tip2Pt?: string;
+  tip3En: string;
+  tip3Zh: string;
+  tip3Pt?: string;
+  communityEn: string;
+  communityZh: string;
+  communityPt?: string;
+  regulatoryEn: string;
+  regulatoryZh: string;
+  regulatoryPt?: string;
+  transferTime: string;
+  minAmount: string;
+  maxAmount: string;
+}
+
+const {
+  flag, countryEn, countryZh, countryPt, currencyCode, currencyNameEn, currencyNameZh,
+  rate, externalHref, heroImage, overviewEn, overviewZh, overviewPt,
+  tip1En, tip1Zh, tip1Pt, tip2En, tip2Zh, tip2Pt, tip3En, tip3Zh, tip3Pt,
+  communityEn, communityZh, communityPt, regulatoryEn, regulatoryZh, regulatoryPt,
+  transferTime, minAmount, maxAmount,
+} = Astro.props;
+---
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-brazil-blue to-blue-900 py-16 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <img src={heroImage} alt={countryEn} class="w-full h-full object-cover" />
+  </div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <a href="/" class="inline-flex items-center gap-2 text-blue-300 text-sm hover:text-white mb-6">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      <span data-lang-content="en">Home</span>
+      <span data-lang-content="zh">首页</span>
+      <span data-lang-content="pt">Início</span>
+    </a>
+    <div class="flex items-center gap-4 mb-4">
+      <span class="text-6xl">{flag}</span>
+      <div>
+        <p class="text-brazil-yellow text-sm font-semibold">
+          <span data-lang-content="en">Remittance Guide</span>
+          <span data-lang-content="zh">汇款指南</span>
+          <span data-lang-content="pt">Guia de Remessas</span>
+        </p>
+        <h1 class="font-display text-3xl sm:text-4xl font-bold text-white">
+          <span data-lang-content="en">Brazil → {countryEn}</span>
+          <span data-lang-content="zh">巴西 → {countryZh}</span>
+          <span data-lang-content="pt">Brasil → {countryEn}</span>
+        </h1>
+      </div>
+    </div>
+    <p class="text-blue-200 text-lg">
+      <span data-lang-content="en">Everything you need to know about sending money from Brazil to {countryEn}</span>
+      <span data-lang-content="zh">关于从巴西向{countryZh}汇款的一切须知</span>
+      <span data-lang-content="pt">Tudo o que você precisa saber sobre enviar dinheiro do Brasil para {countryEn}</span>
+    </p>
+  </div>
+</section>
+
+<!-- Quick Stats -->
+<section class="bg-white border-b border-gray-100">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      <div>
+        <p class="text-2xl font-bold text-brazil-green">{rate}</p>
+        <p class="text-xs text-gray-400 mt-1">
+          <span data-lang-content="en">1 BRL in {currencyCode}</span>
+          <span data-lang-content="zh">1雷亚尔兑{currencyCode}</span>
+          <span data-lang-content="pt">1 BRL em {currencyCode}</span>
+        </p>
+      </div>
+      <div>
+        <p class="text-2xl font-bold text-brazil-blue">{transferTime}</p>
+        <p class="text-xs text-gray-400 mt-1">
+          <span data-lang-content="en">Transfer speed</span>
+          <span data-lang-content="zh">到账速度</span>
+          <span data-lang-content="pt">Velocidade de transferência</span>
+        </p>
+      </div>
+      <div>
+        <p class="text-2xl font-bold text-brazil-blue">{minAmount}</p>
+        <p class="text-xs text-gray-400 mt-1">
+          <span data-lang-content="en">Min. transfer</span>
+          <span data-lang-content="zh">最低汇款额</span>
+          <span data-lang-content="pt">Transferência mínima</span>
+        </p>
+      </div>
+      <div>
+        <p class="text-2xl font-bold text-brazil-blue">{maxAmount}</p>
+        <p class="text-xs text-gray-400 mt-1">
+          <span data-lang-content="en">Max. transfer (daily)</span>
+          <span data-lang-content="zh">每日最高限额</span>
+          <span data-lang-content="pt">Máx. diário</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+  <!-- Overview -->
+  <section>
+    <h2 class="font-display text-2xl font-bold text-brazil-blue mb-4">
+      <span data-lang-content="en">Overview</span>
+      <span data-lang-content="zh">概述</span>
+      <span data-lang-content="pt">Visão Geral</span>
+    </h2>
+    <p class="text-gray-600 leading-relaxed">
+      <span data-lang-content="en">{overviewEn}</span>
+      <span data-lang-content="zh">{overviewZh}</span>
+      <span data-lang-content="pt">{overviewPt}</span>
+    </p>
+  </section>
+
+  <!-- Tips -->
+  <section>
+    <h2 class="font-display text-2xl font-bold text-brazil-blue mb-6">
+      <span data-lang-content="en">Key Tips for Sending to {countryEn}</span>
+      <span data-lang-content="zh">向{countryZh}汇款的关键提示</span>
+      <span data-lang-content="pt">Dicas para Enviar para {countryEn}</span>
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      {[
+        { num: '01', en: tip1En, zh: tip1Zh, pt: tip1Pt },
+        { num: '02', en: tip2En, zh: tip2Zh, pt: tip2Pt },
+        { num: '03', en: tip3En, zh: tip3Zh, pt: tip3Pt },
+      ].map((tip) => (
+        <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
+          <span class="text-brazil-yellow font-bold text-2xl">{tip.num}</span>
+          <p class="text-gray-700 text-sm mt-2 leading-relaxed">
+            <span data-lang-content="en">{tip.en}</span>
+            <span data-lang-content="zh">{tip.zh}</span>
+            <span data-lang-content="pt">{tip.pt}</span>
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      <h2 class="font-display text-2xl font-bold text-brazil-blue mb-4">
+        <span data-lang-content="en">Brazilian Community</span>
+        <span data-lang-content="zh">巴西侨民社区</span>
+        <span data-lang-content="pt">Comunidade Brasileira</span>
+      </h2>
+      <p class="text-gray-600 leading-relaxed">
+        <span data-lang-content="en">{communityEn}</span>
+        <span data-lang-content="zh">{communityZh}</span>
+        <span data-lang-content="pt">{communityPt}</span>
+      </p>
+    </div>
+    <div>
+      <h2 class="font-display text-2xl font-bold text-brazil-blue mb-4">
+        <span data-lang-content="en">Regulatory Information</span>
+        <span data-lang-content="zh">监管信息</span>
+        <span data-lang-content="pt">Informações Regulatórias</span>
+      </h2>
+      <p class="text-gray-600 leading-relaxed">
+        <span data-lang-content="en">{regulatoryEn}</span>
+        <span data-lang-content="zh">{regulatoryZh}</span>
+        <span data-lang-content="pt">{regulatoryPt}</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  {externalHref && (
+    <section class="bg-gradient-to-r from-brazil-green to-brazil-green-dark rounded-2xl p-8 text-white text-center">
+      <h2 class="font-display text-2xl font-bold mb-3">
+        <span data-lang-content="en">Send Money to {countryEn} Now</span>
+        <span data-lang-content="zh">立即向{countryZh}汇款</span>
+        <span data-lang-content="pt">Envie Dinheiro para {countryEn} Agora</span>
+      </h2>
+      <p class="text-green-100 mb-6">
+        <span data-lang-content="en">Use PandaRemit for competitive rates and fast transfers from Brazil to {countryEn}.</span>
+        <span data-lang-content="zh">使用PandaRemit，以具竞争力的汇率从巴西快速汇款至{countryZh}。</span>
+        <span data-lang-content="pt">Use o PandaRemit para taxas competitivas e transferências rápidas do Brasil para {countryEn}.</span>
+      </p>
+      <a
+        href={externalHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-brazil-yellow text-brazil-blue font-bold rounded-xl hover:bg-yellow-300 transition-colors text-lg"
+      >
+        {flag}
+        <span data-lang-content="en">Send to {countryEn} via PandaRemit</span>
+        <span data-lang-content="zh">通过PandaRemit汇款至{countryZh}</span>
+        <span data-lang-content="pt">Enviar para {countryEn} via PandaRemit</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+    </section>
+  )}
+</div>
