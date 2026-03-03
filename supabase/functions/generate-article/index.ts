@@ -7,29 +7,90 @@ const corsHeaders = {
 };
 
 const ARTICLE_TOPICS = [
-  { tag: "Economy", topicEn: "BRL exchange rate movements and impact on remittances", topicZh: "巴西雷亚尔汇率波动对汇款的影响", topicPt: "Movimentos da taxa de câmbio do BRL e impacto nas remessas" },
-  { tag: "Technology", topicEn: "Digital payment innovations for Brazil cross-border transfers", topicZh: "巴西跨境转账的数字支付创新", topicPt: "Inovações em pagamentos digitais para transferências internacionais do Brasil" },
-  { tag: "Diaspora", topicEn: "Brazilian communities abroad and their remittance habits", topicZh: "海外巴西侨民社区及其汇款习惯", topicPt: "Comunidades brasileiras no exterior e seus hábitos de remessas" },
-  { tag: "Finance", topicEn: "Cost comparison: sending money from Brazil to Asia", topicZh: "比较：从巴西向亚洲汇款的成本", topicPt: "Comparação de custos: enviando dinheiro do Brasil para a Ásia" },
-  { tag: "Regulation", topicEn: "Banco Central do Brasil new rules for international transfers", topicZh: "巴西中央银行国际转账新规", topicPt: "Novas regras do Banco Central do Brasil para transferências internacionais" },
-  { tag: "Market", topicEn: "Top remittance corridors from Brazil: trends and tips", topicZh: "巴西主要汇款走廊：趋势与技巧", topicPt: "Principais corredores de remessas do Brasil: tendências e dicas" },
-  { tag: "Culture", topicEn: "How Brazilian holidays affect international money transfers", topicZh: "巴西节假日如何影响国际汇款", topicPt: "Como os feriados brasileiros afetam as transferências internacionais" },
-  { tag: "Tips", topicEn: "Best strategies to maximize your BRL when sending abroad", topicZh: "向海外汇款时最大化巴西雷亚尔价值的最佳策略", topicPt: "Melhores estratégias para maximizar seu BRL ao enviar para o exterior" },
-  { tag: "Economy", topicEn: "Brazil's trade balance and its effect on the real exchange rate", topicZh: "巴西贸易平衡及其对雷亚尔汇率的影响", topicPt: "Balança comercial do Brasil e seu efeito na taxa de câmbio do real" },
-  { tag: "Finance", topicEn: "Hidden fees in international bank transfers from Brazil", topicZh: "从巴西进行国际银行转账的隐性费用", topicPt: "Taxas ocultas em transferências bancárias internacionais do Brasil" },
-  { tag: "Technology", topicEn: "Mobile apps revolutionizing how Brazilians send money home", topicZh: "手机应用程序如何革命性地改变巴西人的汇款方式", topicPt: "Aplicativos móveis revolucionando como os brasileiros enviam dinheiro" },
-  { tag: "Market", topicEn: "Remittance flows from Brazil to China: a growing corridor", topicZh: "从巴西到中国的汇款流：一个不断增长的走廊", topicPt: "Fluxos de remessas do Brasil para a China: um corredor crescente" },
-];
-
-const PEXELS_IMAGES = [
-  "https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
-  "https://images.pexels.com/photos/1796743/pexels-photo-1796743.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
-  "https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
-  "https://images.pexels.com/photos/2549018/pexels-photo-2549018.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
-  "https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
-  "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
-  "https://images.pexels.com/photos/210742/pexels-photo-210742.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
-  "https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  {
+    tag: "Economy",
+    topicEn: "BRL exchange rate movements and impact on remittances",
+    topicZh: "巴西雷亚尔汇率波动对汇款的影响",
+    topicPt: "Movimentos da taxa de câmbio do BRL e impacto nas remessas",
+    imageUrl: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Technology",
+    topicEn: "Digital payment innovations for Brazil cross-border transfers",
+    topicZh: "巴西跨境转账的数字支付创新",
+    topicPt: "Inovações em pagamentos digitais para transferências internacionais do Brasil",
+    imageUrl: "https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Diaspora",
+    topicEn: "Brazilian communities abroad and their remittance habits",
+    topicZh: "海外巴西侨民社区及其汇款习惯",
+    topicPt: "Comunidades brasileiras no exterior e seus hábitos de remessas",
+    imageUrl: "https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Finance",
+    topicEn: "Cost comparison: sending money from Brazil to Asia",
+    topicZh: "比较：从巴西向亚洲汇款的成本",
+    topicPt: "Comparação de custos: enviando dinheiro do Brasil para a Ásia",
+    imageUrl: "https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Regulation",
+    topicEn: "Banco Central do Brasil new rules for international transfers",
+    topicZh: "巴西中央银行国际转账新规",
+    topicPt: "Novas regras do Banco Central do Brasil para transferências internacionais",
+    imageUrl: "https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Market",
+    topicEn: "Top remittance corridors from Brazil: trends and tips",
+    topicZh: "巴西主要汇款走廊：趋势与技巧",
+    topicPt: "Principais corredores de remessas do Brasil: tendências e dicas",
+    imageUrl: "https://images.pexels.com/photos/2549018/pexels-photo-2549018.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Culture",
+    topicEn: "How Brazilian holidays affect international money transfers",
+    topicZh: "巴西节假日如何影响国际汇款",
+    topicPt: "Como os feriados brasileiros afetam as transferências internacionais",
+    imageUrl: "https://images.pexels.com/photos/1796743/pexels-photo-1796743.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Tips",
+    topicEn: "Best strategies to maximize your BRL when sending abroad",
+    topicZh: "向海外汇款时最大化巴西雷亚尔价值的最佳策略",
+    topicPt: "Melhores estratégias para maximizar seu BRL ao enviar para o exterior",
+    imageUrl: "https://images.pexels.com/photos/210742/pexels-photo-210742.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Economy",
+    topicEn: "Brazil's trade balance and its effect on the real exchange rate",
+    topicZh: "巴西贸易平衡及其对雷亚尔汇率的影响",
+    topicPt: "Balança comercial do Brasil e seu efeito na taxa de câmbio do real",
+    imageUrl: "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Finance",
+    topicEn: "Hidden fees in international bank transfers from Brazil",
+    topicZh: "从巴西进行国际银行转账的隐性费用",
+    topicPt: "Taxas ocultas em transferências bancárias internacionais do Brasil",
+    imageUrl: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Technology",
+    topicEn: "Mobile apps revolutionizing how Brazilians send money home",
+    topicZh: "手机应用程序如何革命性地改变巴西人的汇款方式",
+    topicPt: "Aplicativos móveis revolucionando como os brasileiros enviam dinheiro",
+    imageUrl: "https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
+  {
+    tag: "Market",
+    topicEn: "Remittance flows from Brazil to China: a growing corridor",
+    topicZh: "从巴西到中国的汇款流：一个不断增长的走廊",
+    topicPt: "Fluxos de remessas do Brasil para a China: um corredor crescente",
+    imageUrl: "https://images.pexels.com/photos/1121123/pexels-photo-1121123.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop",
+  },
 ];
 
 function slugify(text: string): string {
@@ -123,8 +184,6 @@ Deno.serve(async (req: Request) => {
     const baseSlug = slugify(generated.title_en);
     const slug = `${baseSlug}-${timestamp}`;
 
-    const imageUrl = PEXELS_IMAGES[Math.floor(Math.random() * PEXELS_IMAGES.length)];
-
     const { data: latestArticle } = await supabase
       .from("articles")
       .select("slug")
@@ -140,7 +199,7 @@ Deno.serve(async (req: Request) => {
         section: "today-brazil",
         tag: topic.tag,
         published_date: dateStr,
-        image_url: imageUrl,
+        image_url: topic.imageUrl,
         title_en: generated.title_en,
         title_zh: generated.title_zh,
         title_pt: generated.title_pt,
