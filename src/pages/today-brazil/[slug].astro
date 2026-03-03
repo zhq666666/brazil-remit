@@ -1,16 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getArticleBySlug, getArticlesBySection } from '../../lib/supabase';
+import { getArticleBySlug } from '../../lib/supabase';
 
-export async function getStaticPaths() {
-  const articles = await getArticlesBySection('today-brazil');
-  return articles.map((article) => ({
-    params: { slug: article.slug },
-    props: { article },
-  }));
-}
-
-const { article } = Astro.props;
+const { slug } = Astro.params;
+const article = await getArticleBySlug(slug!);
 
 if (!article) {
   return Astro.redirect('/today-brazil');
