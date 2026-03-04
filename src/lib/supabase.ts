@@ -27,31 +27,23 @@ export interface Article {
 }
 
 export async function getArticlesBySection(section: string): Promise<Article[]> {
-  try {
-    const { data, error } = await supabase
-      .from('articles')
-      .select('*')
-      .eq('section', section)
-      .order('published_date', { ascending: false });
+  const { data, error } = await supabase
+    .from('articles')
+    .select('*')
+    .eq('section', section)
+    .order('published_date', { ascending: false });
 
-    if (error) return [];
-    return data ?? [];
-  } catch {
-    return [];
-  }
+  if (error) throw error;
+  return data ?? [];
 }
 
 export async function getArticleBySlug(slug: string): Promise<Article | null> {
-  try {
-    const { data, error } = await supabase
-      .from('articles')
-      .select('*')
-      .eq('slug', slug)
-      .maybeSingle();
+  const { data, error } = await supabase
+    .from('articles')
+    .select('*')
+    .eq('slug', slug)
+    .maybeSingle();
 
-    if (error) return null;
-    return data;
-  } catch {
-    return null;
-  }
+  if (error) throw error;
+  return data;
 }
