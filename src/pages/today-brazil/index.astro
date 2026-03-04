@@ -1,5 +1,110 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const articles = [
+  {
+    slug: 'brl-exchange-rate-march-2026',
+    tag: 'Economy',
+    imageUrl: 'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop',
+    publishedDate: '2026-03-01',
+    title_en: 'BRL Exchange Rate in March 2026: What Senders Need to Know',
+    title_zh: '2026年3月巴西雷亚尔汇率：汇款人必知要点',
+    title_pt: 'Taxa de Câmbio do BRL em Março de 2026: O Que os Remetentes Precisam Saber',
+    excerpt_en: 'The Brazilian real has stabilized around BRL 5.7 per USD in early 2026, creating favorable conditions for Brazilians sending money abroad.',
+    excerpt_zh: '2026年初，巴西雷亚尔汇率稳定在约5.7雷亚尔兑1美元，为巴西人向海外汇款创造了有利条件。',
+    excerpt_pt: 'O real brasileiro estabilizou-se em torno de BRL 5,7 por USD no início de 2026, criando condições favoráveis para brasileiros enviando dinheiro ao exterior.',
+  },
+  {
+    slug: 'pix-international-payments-2026',
+    tag: 'Technology',
+    imageUrl: 'https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop',
+    publishedDate: '2026-03-02',
+    title_en: 'PIX and the Future of Brazil\'s International Payment Ecosystem',
+    title_zh: 'PIX与巴西国际支付生态系统的未来',
+    title_pt: 'PIX e o Futuro do Ecossistema de Pagamentos Internacionais do Brasil',
+    excerpt_en: 'Brazil\'s PIX instant payment system now processes over 4 billion transactions monthly and is beginning to extend its reach into cross-border remittances.',
+    excerpt_zh: '巴西PIX即时支付系统现在每月处理超过40亿笔交易，并开始将覆盖范围扩展到跨境汇款。',
+    excerpt_pt: 'O sistema de pagamentos instantâneos PIX do Brasil agora processa mais de 4 bilhões de transações mensalmente e está começando a expandir seu alcance.',
+  },
+  {
+    slug: 'brazilian-diaspora-remittance-2026',
+    tag: 'Diaspora',
+    imageUrl: 'https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop',
+    publishedDate: '2026-03-03',
+    title_en: 'Brazilian Communities Abroad: Remittance Habits and Trends in 2026',
+    title_zh: '海外巴西社区：2026年汇款习惯与趋势',
+    title_pt: 'Comunidades Brasileiras no Exterior: Hábitos e Tendências de Remessas em 2026',
+    excerpt_en: 'With 4.5 million Brazilians living abroad, remittances play a vital role in supporting families back home. New research reveals how sending habits are evolving.',
+    excerpt_zh: '随着450万巴西人生活在海外，汇款在支持国内家庭方面发挥着至关重要的作用。新研究揭示了不同侨民社区汇款习惯的演变趋势。',
+    excerpt_pt: 'Com 4,5 milhões de brasileiros vivendo no exterior, as remessas desempenham papel vital no sustento de famílias no Brasil.',
+  },
+  {
+    slug: 'brazil-asia-remittance-costs',
+    tag: 'Finance',
+    imageUrl: 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop',
+    publishedDate: '2026-03-04',
+    title_en: 'Sending Money from Brazil to Asia: Costs, Speed, and Best Options',
+    title_zh: '从巴西向亚洲汇款：成本、速度与最佳选择',
+    title_pt: 'Enviando Dinheiro do Brasil para a Ásia: Custos, Velocidade e Melhores Opções',
+    excerpt_en: 'The Brazil-to-Asia remittance corridor is growing rapidly, driven by business, diaspora, and education flows. Comparing providers can save senders hundreds of reais.',
+    excerpt_zh: '受商业、侨民和教育流动驱动，巴西至亚洲的汇款走廊正在快速增长。比较服务提供商可以为汇款人每笔转账节省数百雷亚尔。',
+    excerpt_pt: 'O corredor de remessas Brasil–Ásia está crescendo rapidamente, impulsionado por fluxos de negócios, diáspora e educação.',
+  },
+  {
+    slug: 'banco-central-2026-rules',
+    tag: 'Regulation',
+    imageUrl: 'https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop',
+    publishedDate: '2026-03-05',
+    title_en: "Banco Central's 2026 Rules for International Transfers: What Changed",
+    title_zh: '巴西中央银行2026年国际转账新规：有哪些变化',
+    title_pt: 'Regras de 2026 do Banco Central para Transferências Internacionais: O Que Mudou',
+    excerpt_en: 'The Banco Central do Brasil updated its framework for international money transfers in 2025–2026. Here\'s what individuals and businesses need to know.',
+    excerpt_zh: '巴西中央银行在2025至2026年更新了国际汇款框架。以下是向海外汇款的个人和企业需要了解的内容。',
+    excerpt_pt: 'O Banco Central do Brasil atualizou seu framework para transferências internacionais de dinheiro em 2025–2026.',
+  },
+  {
+    slug: 'brazil-remittance-corridors-2026',
+    tag: 'Market',
+    imageUrl: 'https://images.pexels.com/photos/2549018/pexels-photo-2549018.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop',
+    publishedDate: '2026-03-06',
+    title_en: 'Top Remittance Corridors from Brazil: 2026 Trends and Analysis',
+    title_zh: '2026年巴西主要汇款走廊：趋势与分析',
+    title_pt: 'Principais Corredores de Remessas do Brasil: Tendências e Análise de 2026',
+    excerpt_en: 'The landscape of international remittances from Brazil is undergoing significant structural changes in 2026, with new corridors growing rapidly.',
+    excerpt_zh: '2026年，从巴西向海外的国际汇款格局正在发生重大结构性变化，新兴走廊快速增长。',
+    excerpt_pt: 'O cenário de remessas internacionais do Brasil está passando por mudanças estruturais significativas em 2026.',
+  },
+  {
+    slug: 'brazil-holidays-remittances',
+    tag: 'Culture',
+    imageUrl: 'https://images.pexels.com/photos/1796743/pexels-photo-1796743.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop',
+    publishedDate: '2026-03-07',
+    title_en: 'Carnival, Semana Santa, and Transfers: How Brazilian Holidays Shape Remittances',
+    title_zh: '狂欢节、圣周与汇款：巴西节假日如何影响国际转账',
+    title_pt: 'Carnaval, Semana Santa e Transferências: Como os Feriados Brasileiros Moldam as Remessas',
+    excerpt_en: 'Brazilian public holidays cause significant spikes in remittance volumes and can affect processing times. Planning transfers around key dates helps avoid delays.',
+    excerpt_zh: '巴西公共假日会导致汇款量大幅飙升，并可能影响处理时间。围绕关键日期规划转账有助于家庭避免延误。',
+    excerpt_pt: 'Os feriados públicos brasileiros causam picos significativos nos volumes de remessas e podem afetar os tempos de processamento.',
+  },
+  {
+    slug: 'hidden-fees-bank-wire-brazil',
+    tag: 'Finance',
+    imageUrl: 'https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop',
+    publishedDate: '2026-03-08',
+    title_en: 'Hidden Fees in Bank Wire Transfers from Brazil: A Complete Guide',
+    title_zh: '从巴西进行银行电汇的隐性费用：完整指南',
+    title_pt: 'Taxas Ocultas em Transferências Bancárias do Brasil: Um Guia Completo',
+    excerpt_en: 'Traditional banks rarely show the full cost of international wire transfers upfront. Understanding the complete fee structure can save Brazilian senders thousands of reais.',
+    excerpt_zh: '传统银行很少提前显示国际电汇的全部成本。了解完整的费用结构每年可以为巴西汇款人节省数千雷亚尔。',
+    excerpt_pt: 'Os bancos tradicionais raramente mostram o custo completo das transferências internacionais antecipadamente.',
+  },
+];
+
+function formatDateEn(dateStr: string): string {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  const date = new Date(y, m - 1, d);
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
 ---
 
 <Layout
@@ -9,12 +114,11 @@ import Layout from '../../layouts/Layout.astro';
   image="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop"
   type="website"
 >
-  <!-- Hero -->
   <section class="bg-gradient-to-br from-brazil-blue to-blue-900 py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="inline-flex items-center gap-2 bg-brazil-green/20 text-brazil-yellow text-sm font-semibold px-4 py-2 rounded-full mb-4">
         <span class="w-2 h-2 bg-brazil-yellow rounded-full"></span>
-        <span id="hero-date">Loading...</span>
+        <span>Mar 1 – Mar 8, 2026</span>
       </div>
       <h1 class="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
         <span data-lang-content="en">Today's Brazil</span>
@@ -29,26 +133,90 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Blog Grid -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div id="articles-loading" class="flex justify-center py-16">
-        <div class="w-8 h-8 border-4 border-brazil-green border-t-transparent rounded-full animate-spin"></div>
+      <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {articles.map((article) => (
+          <article class="card group flex flex-col h-full" data-article={JSON.stringify({
+            slug: article.slug,
+            tag: article.tag,
+            publishedDate: article.publishedDate,
+            title_en: article.title_en,
+            title_zh: article.title_zh,
+            title_pt: article.title_pt,
+            excerpt_en: article.excerpt_en,
+            excerpt_zh: article.excerpt_zh,
+            excerpt_pt: article.excerpt_pt,
+            imageUrl: article.imageUrl,
+          })}>
+            <div class="overflow-hidden h-48">
+              <img
+                src={article.imageUrl}
+                alt={article.title_en}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="px-2 py-0.5 bg-green-100 text-brazil-green text-xs font-semibold rounded-full">{article.tag}</span>
+                <time class="text-xs text-gray-400">{formatDateEn(article.publishedDate)}</time>
+              </div>
+              <h3
+                class="font-display font-semibold text-brazil-blue text-lg leading-snug mb-2 group-hover:text-brazil-green transition-colors article-title"
+                data-en={article.title_en}
+                data-zh={article.title_zh}
+                data-pt={article.title_pt}
+              >
+                {article.title_en}
+              </h3>
+              <p
+                class="text-gray-500 text-sm leading-relaxed flex-1 article-excerpt"
+                data-en={article.excerpt_en}
+                data-zh={article.excerpt_zh}
+                data-pt={article.excerpt_pt}
+              >
+                {article.excerpt_en}
+              </p>
+              <a
+                href={`/today-brazil/article?slug=${article.slug}`}
+                class="mt-4 inline-flex items-center gap-1 text-brazil-green font-semibold text-sm hover:gap-2 transition-all article-readmore"
+              >
+                <span data-lang-content="en">Read More</span>
+                <span data-lang-content="zh">阅读更多</span>
+                <span data-lang-content="pt">Leia Mais</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
-      <div id="articles-empty" class="hidden text-center text-gray-400 py-16">No articles found.</div>
-      <div id="articles-grid" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-400 text-sm mb-2">
+          <span data-lang-content="en">New articles are published daily</span>
+          <span data-lang-content="zh">每日发布新文章</span>
+          <span data-lang-content="pt">Novos artigos são publicados diariamente</span>
+        </p>
+        <a
+          href="/today-brazil/latest"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-brazil-green text-white font-semibold rounded-full hover:bg-brazil-green/90 transition-colors"
+        >
+          <span data-lang-content="en">See Latest Articles</span>
+          <span data-lang-content="zh">查看最新文章</span>
+          <span data-lang-content="pt">Ver Artigos Recentes</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 </Layout>
 
 <script>
-  import { createClient } from '@supabase/supabase-js';
-
-  const supabase = createClient(
-    import.meta.env.VITE_SUPABASE_URL,
-    import.meta.env.VITE_SUPABASE_ANON_KEY
-  );
-
   function getLang(): string {
     try {
       return localStorage.getItem('lang') || 'en';
@@ -57,96 +225,20 @@ import Layout from '../../layouts/Layout.astro';
     }
   }
 
-  function formatDate(dateStr: string, lang: string): string {
-    const date = new Date(dateStr);
-    if (lang === 'zh') return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
-    if (lang === 'pt') return date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'short', year: 'numeric' });
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  function applyLang(lang: string) {
+    document.querySelectorAll<HTMLElement>('.article-title').forEach((el) => {
+      const text = el.dataset[lang] || el.dataset['en'] || '';
+      el.textContent = text;
+    });
+    document.querySelectorAll<HTMLElement>('.article-excerpt').forEach((el) => {
+      const text = el.dataset[lang] || el.dataset['en'] || '';
+      el.textContent = text;
+    });
   }
 
-  function getTitle(article: any, lang: string): string {
-    if (lang === 'zh') return article.title_zh || article.title_en;
-    if (lang === 'pt') return article.title_pt || article.title_en;
-    return article.title_en;
-  }
-
-  function getExcerpt(article: any, lang: string): string {
-    if (lang === 'zh') return article.excerpt_zh || article.excerpt_en;
-    if (lang === 'pt') return article.excerpt_pt || article.excerpt_en;
-    return article.excerpt_en;
-  }
-
-  function getReadMore(lang: string): string {
-    if (lang === 'zh') return '阅读更多';
-    if (lang === 'pt') return 'Leia Mais';
-    return 'Read More';
-  }
-
-  function buildCard(article: any, lang: string): string {
-    const title = getTitle(article, lang);
-    const excerpt = getExcerpt(article, lang);
-    const date = formatDate(article.published_date, lang);
-    const readMore = getReadMore(lang);
-
-    return `
-      <article class="card group flex flex-col h-full">
-        ${article.image_url ? `
-          <div class="overflow-hidden h-48">
-            <img src="${article.image_url}" alt="${title.replace(/"/g, '&quot;')}"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-          </div>` : ''}
-        <div class="p-6 flex flex-col flex-1">
-          <div class="flex items-center gap-2 mb-3">
-            ${article.tag ? `<span class="px-2 py-0.5 bg-green-100 text-brazil-green text-xs font-semibold rounded-full">${article.tag}</span>` : ''}
-            <time class="text-xs text-gray-400">${date}</time>
-          </div>
-          <h3 class="font-display font-semibold text-brazil-blue text-lg leading-snug mb-2 group-hover:text-brazil-green transition-colors">${title}</h3>
-          <p class="text-gray-500 text-sm leading-relaxed flex-1">${excerpt}</p>
-          <a href="/today-brazil/article?slug=${article.slug}" class="mt-4 inline-flex items-center gap-1 text-brazil-green font-semibold text-sm hover:gap-2 transition-all">
-            ${readMore}
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
-    `;
-  }
-
-  async function loadArticles() {
-    const lang = getLang();
-    const loading = document.getElementById('articles-loading')!;
-    const empty = document.getElementById('articles-empty')!;
-    const grid = document.getElementById('articles-grid')!;
-    const heroDate = document.getElementById('hero-date')!;
-
-    const { data: articles } = await supabase
-      .from('articles')
-      .select('*')
-      .eq('section', 'today-brazil')
-      .order('published_date', { ascending: false });
-
-    loading.classList.add('hidden');
-
-    if (!articles || articles.length === 0) {
-      empty.classList.remove('hidden');
-      return;
-    }
-
-    const latest = articles[0];
-    const oldest = articles[articles.length - 1];
-    const startDate = formatDate(oldest.published_date, lang);
-    const endDate = formatDate(latest.published_date, lang);
-    heroDate.textContent = `${startDate} – ${endDate}`;
-
-    grid.innerHTML = articles.map((a: any) => buildCard(a, lang)).join('');
-    grid.classList.remove('hidden');
-  }
-
-  loadArticles();
+  applyLang(getLang());
 
   document.addEventListener('langchange', () => {
-    const grid = document.getElementById('articles-grid')!;
-    if (!grid.classList.contains('hidden')) {
-      loadArticles();
-    }
+    applyLang(getLang());
   });
 </script>
