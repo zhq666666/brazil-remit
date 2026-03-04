@@ -12,22 +12,16 @@ interface Props {
   heroImage: string;
   overviewEn: string;
   overviewZh: string;
-  overviewPt?: string;
   tip1En: string;
   tip1Zh: string;
-  tip1Pt?: string;
   tip2En: string;
   tip2Zh: string;
-  tip2Pt?: string;
   tip3En: string;
   tip3Zh: string;
-  tip3Pt?: string;
   communityEn: string;
   communityZh: string;
-  communityPt?: string;
   regulatoryEn: string;
   regulatoryZh: string;
-  regulatoryPt?: string;
   transferTime: string;
   minAmount: string;
   maxAmount: string;
@@ -35,9 +29,9 @@ interface Props {
 
 const {
   flag, countryEn, countryZh, countryPt, currencyCode, currencyNameEn, currencyNameZh,
-  rate, externalHref, heroImage, overviewEn, overviewZh, overviewPt,
-  tip1En, tip1Zh, tip1Pt, tip2En, tip2Zh, tip2Pt, tip3En, tip3Zh, tip3Pt,
-  communityEn, communityZh, communityPt, regulatoryEn, regulatoryZh, regulatoryPt,
+  rate, externalHref, heroImage, overviewEn, overviewZh,
+  tip1En, tip1Zh, tip2En, tip2Zh, tip3En, tip3Zh,
+  communityEn, communityZh, regulatoryEn, regulatoryZh,
   transferTime, minAmount, maxAmount,
 } = Astro.props;
 ---
@@ -128,7 +122,6 @@ const {
     <p class="text-gray-600 leading-relaxed">
       <span data-lang-content="en">{overviewEn}</span>
       <span data-lang-content="zh">{overviewZh}</span>
-      <span data-lang-content="pt">{overviewPt}</span>
     </p>
   </section>
 
@@ -141,16 +134,15 @@ const {
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
       {[
-        { num: '01', en: tip1En, zh: tip1Zh, pt: tip1Pt },
-        { num: '02', en: tip2En, zh: tip2Zh, pt: tip2Pt },
-        { num: '03', en: tip3En, zh: tip3Zh, pt: tip3Pt },
+        { num: '01', en: tip1En, zh: tip1Zh },
+        { num: '02', en: tip2En, zh: tip2Zh },
+        { num: '03', en: tip3En, zh: tip3Zh },
       ].map((tip) => (
         <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100">
           <span class="text-brazil-yellow font-bold text-2xl">{tip.num}</span>
           <p class="text-gray-700 text-sm mt-2 leading-relaxed">
             <span data-lang-content="en">{tip.en}</span>
             <span data-lang-content="zh">{tip.zh}</span>
-            <span data-lang-content="pt">{tip.pt}</span>
           </p>
         </div>
       ))}
@@ -168,7 +160,6 @@ const {
       <p class="text-gray-600 leading-relaxed">
         <span data-lang-content="en">{communityEn}</span>
         <span data-lang-content="zh">{communityZh}</span>
-        <span data-lang-content="pt">{communityPt}</span>
       </p>
     </div>
     <div>
@@ -180,7 +171,6 @@ const {
       <p class="text-gray-600 leading-relaxed">
         <span data-lang-content="en">{regulatoryEn}</span>
         <span data-lang-content="zh">{regulatoryZh}</span>
-        <span data-lang-content="pt">{regulatoryPt}</span>
       </p>
     </div>
   </section>
