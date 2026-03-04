@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Today's Brazil"
+  description="Daily news and insights on Brazilian remittance, BRL exchange rates, and financial trends."
+  image="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop"
+  type="article"
+>
+  <div id="article-loading" class="flex justify-center py-32">
+    <div class="w-8 h-8 border-4 border-brazil-green border-t-transparent rounded-full animate-spin"></div>
+  </div>
+
+  <div id="article-not-found" class="hidden max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+    <p class="text-gray-400 text-lg mb-6">Article not found.</p>
+    <a href="/today-brazil" class="inline-flex items-center gap-2 text-brazil-green font-semibold hover:underline">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Today's Brazil
+    </a>
+  </div>
+
+  <article id="article-content" class="hidden max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <a href="/today-brazil" class="inline-flex items-center gap-2 text-brazil-green text-sm font-medium hover:underline mb-8">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      <span data-lang-content="en">Back to Today's Brazil</span>
+      <span data-lang-content="zh">返回今日巴西</span>
+      <span data-lang-content="pt">Voltar ao Brasil Hoje</span>
+    </a>
+
+    <div class="flex items-center gap-3 mb-4">
+      <span id="article-tag" class="hidden px-3 py-1 bg-green-100 text-brazil-green text-xs font-semibold rounded-full"></span>
+      <time id="article-date" class="text-sm text-gray-400"></time>
+    </div>
+
+    <h1 id="article-title" class="font-display text-3xl sm:text-4xl font-bold text-brazil-blue leading-tight mb-6"></h1>
+
+    <img id="article-image" class="hidden w-full rounded-2xl mb-8 object-cover h-64" alt="" />
+
+    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-5">
+      <div id="article-body"></div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between gap-4">
+      <a id="prev-link" class="hidden group flex items-center gap-2 text-sm text-gray-500 hover:text-brazil-green" href="#">
+        <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        <span data-lang-content="en">Previous Article</span>
+        <span data-lang-content="zh">上一篇</span>
+        <span data-lang-content="pt">Artigo Anterior</span>
+      </a>
+      <a id="next-link" class="hidden group flex items-center gap-2 text-sm text-gray-500 hover:text-brazil-green ml-auto" href="#">
+        <span data-lang-content="en">Next Article</span>
+        <span data-lang-content="zh">下一篇</span>
+        <span data-lang-content="pt">Próximo Artigo</span>
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </article>
+</Layout>
+
+<script>
+  import { createClient } from '@supabase/supabase-js';
+
+  const supabase = createClient(
+    import.meta.env.VITE_SUPABASE_URL,
+    import.meta.env.VITE_SUPABASE_ANON_KEY
+  );
+
+  function getLang(): string {
+    try {
+      return localStorage.getItem('lang') || 'en';
+    } catch {
+      return 'en';
+    }
+  }
+
+  function formatDate(dateStr: string, lang: string): string {
+    const date = new Date(dateStr);
+    if (lang === 'zh') return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
+    if (lang === 'pt') return date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+    return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  }
+
+  async function loadArticle() {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug') || '';
+    const lang = getLang();
+
+    const loading = document.getElementById('article-loading')!;
+    const notFound = document.getElementById('article-not-found')!;
+    const content = document.getElementById('article-content')!;
+
+    if (!slug) {
+      loading.classList.add('hidden');
+      notFound.classList.remove('hidden');
+      return;
+    }
+
+    const { data: article } = await supabase
+      .from('articles')
+      .select('*')
+      .eq('slug', slug)
+      .maybeSingle();
+
+    loading.classList.add('hidden');
+
+    if (!article) {
+      notFound.classList.remove('hidden');
+      return;
+    }
+
+    document.title = `${lang === 'zh' ? article.title_zh : lang === 'pt' ? article.title_pt : article.title_en} | BrazilRemit`;
+
+    const tagEl = document.getElementById('article-tag')!;
+    if (article.tag) {
+      tagEl.textContent = article.tag;
+      tagEl.classList.remove('hidden');
+    }
+
+    document.getElementById('article-date')!.textContent = formatDate(article.published_date, lang);
+
+    const titleEl = document.getElementById('article-title')!;
+    titleEl.textContent = lang === 'zh' ? (article.title_zh || article.title_en)
+      : lang === 'pt' ? (article.title_pt || article.title_en)
+      : article.title_en;
+
+    const imgEl = document.getElementById('article-image') as HTMLImageElement;
+    if (article.image_url) {
+      imgEl.src = article.image_url;
+      imgEl.alt = article.title_en;
+      imgEl.classList.remove('hidden');
+    }
+
+    const body = lang === 'zh' ? (article.body_zh || article.body_en)
+      : lang === 'pt' ? (article.body_pt || article.body_en)
+      : article.body_en;
+    document.getElementById('article-body')!.innerHTML = body || '';
+
+    if (article.prev_slug) {
+      const prevLink = document.getElementById('prev-link') as HTMLAnchorElement;
+      prevLink.href = `/today-brazil/article?slug=${article.prev_slug}`;
+      prevLink.classList.remove('hidden');
+    }
+    if (article.next_slug) {
+      const nextLink = document.getElementById('next-link') as HTMLAnchorElement;
+      nextLink.href = `/today-brazil/article?slug=${article.next_slug}`;
+      nextLink.classList.remove('hidden');
+    }
+
+    content.classList.remove('hidden');
+  }
+
+  loadArticle();
+
+  document.addEventListener('langchange', () => {
+    loadArticle();
+  });
+</script>
