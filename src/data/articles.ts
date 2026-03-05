@@ -210,5 +210,7 @@ export function getArticleBySlug(slug: string): Article | undefined {
 }
 
 export function getLatestArticles(count: number): Article[] {
-  return articles.slice(0, count);
+  return [...articles]
+    .sort((a, b) => b.published_date.localeCompare(a.published_date))
+    .slice(0, count);
 }
