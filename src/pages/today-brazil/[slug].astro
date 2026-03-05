@@ -1,29 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { articles } from '../../data/articles';
 
-export async function getStaticPaths() {
-  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-  const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-  const res = await fetch(
-    `${supabaseUrl}/rest/v1/articles?select=slug,section,tag,published_date,image_url,title_en,title_zh,title_pt,excerpt_en,excerpt_zh,excerpt_pt,body_en,body_zh,body_pt,prev_slug,next_slug&order=published_date.desc`,
-    {
-      headers: {
-        apikey: supabaseKey,
-        Authorization: `Bearer ${supabaseKey}`,
-      },
-    }
-  );
-  if (!res.ok) throw new Error(`Supabase fetch failed: ${res.status} ${res.statusText}`);
-  const articles = await res.json();
-  if (!Array.isArray(articles)) throw new Error('Unexpected articles response from Supabase');
-
+export function getStaticPaths() {
   const slugMap: Record<string, { title_en: string; slug: string }> = {};
   for (const a of articles) {
     slugMap[a.slug] = { title_en: a.title_en, slug: a.slug };
   }
-
-  return articles.map((article: any) => ({
+  return articles.map((article) => ({
     params: { slug: article.slug },
     props: { article, slugMap },
   }));
@@ -44,10 +28,9 @@ const tagColorMap: Record<string, string> = {
   Guide: 'bg-green-100 text-brazil-green',
   Market: 'bg-gray-100 text-gray-700',
   Economy: 'bg-teal-100 text-teal-700',
-  Diaspora: 'bg-purple-100 text-purple-700',
   Finance: 'bg-red-100 text-red-700',
   Tips: 'bg-cyan-100 text-cyan-700',
-  Regulation: 'bg-indigo-100 text-indigo-700',
+  Regulation: 'bg-blue-100 text-blue-700',
 };
 
 const tagClass = tagColorMap[article.tag] ?? 'bg-gray-100 text-gray-700';

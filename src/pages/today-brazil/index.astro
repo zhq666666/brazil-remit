@@ -1,21 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import BlogCard from '../../components/BlogCard.astro';
+import { articles } from '../../data/articles';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-const res = await fetch(
-  `${supabaseUrl}/rest/v1/articles?select=slug,tag,published_date,image_url,title_en,title_zh,title_pt,excerpt_en,excerpt_zh,excerpt_pt&order=published_date.desc`,
-  {
-    headers: {
-      apikey: supabaseKey,
-      Authorization: `Bearer ${supabaseKey}`,
-    },
-  }
-);
-if (!res.ok) throw new Error(`Supabase fetch failed: ${res.status} ${res.statusText}`);
-const posts = await res.json();
+const posts = articles;
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr + 'T12:00:00Z');
@@ -62,7 +50,7 @@ function shortDate(dateStr: string) {
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post: any) => (
+        {posts.map((post) => (
           <BlogCard
             titleEn={post.title_en}
             titleZh={post.title_zh}
