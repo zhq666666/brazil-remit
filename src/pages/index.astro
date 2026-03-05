@@ -2,6 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import CountryCard from '../components/CountryCard.astro';
 import BlogCard from '../components/BlogCard.astro';
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+const res = await fetch(
+  `${supabaseUrl}/rest/v1/articles?select=slug,tag,published_date,image_url,title_en,title_zh,title_pt,excerpt_en,excerpt_zh,excerpt_pt&order=published_date.desc&limit=3`,
+  {
+    headers: {
+      apikey: supabaseKey,
+      Authorization: `Bearer ${supabaseKey}`,
+    },
+  }
+);
+const latestPosts = await res.json();
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr + 'T12:00:00Z');
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
 ---
 
 <Layout
@@ -326,42 +345,20 @@ import BlogCard from '../components/BlogCard.astro';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <BlogCard
-          titleEn="Brazil's Diaspora and the Remittance Lifeline"
-          titleZh="巴西海外侨民与汇款生命线"
-          titlePt="A Diáspora Brasileira e a Linha de Vida das Remessas"
-          excerptEn="Millions of Brazilians living abroad send money home every year, creating a vital economic lifeline for families across the country."
-          excerptZh="数百万在海外生活的巴西人每年都会向国内汇款，为全国各地的家庭创造了重要的经济生命线。"
-          excerptPt="Milhões de brasileiros vivendo no exterior enviam dinheiro para casa todo ano, criando uma vital linha de vida econômica para famílias em todo o país."
-          date="Feb 25, 2026"
-          href="/today-brazil/feb-25"
-          image="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
-          tag="Remittance"
-        />
-        <BlogCard
-          titleEn="PIX Goes International: Brazil's Payment Revolution"
-          titleZh="PIX走向国际：巴西的支付革命"
-          titlePt="PIX vai Internacional: A Revolução dos Pagamentos do Brasil"
-          excerptEn="Brazil's instant payment system PIX is expanding internationally, opening new avenues for faster and cheaper cross-border money transfers."
-          excerptZh="巴西即时支付系统PIX正在向国际扩展，为更快速、更廉价的跨境汇款开辟了新途径。"
-          excerptPt="O sistema de pagamento instantâneo PIX do Brasil está se expandindo internacionalmente, abrindo novas vias para transferências internacionais mais rápidas e baratas."
-          date="Feb 24, 2026"
-          href="/today-brazil/feb-24"
-          image="https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
-          tag="Technology"
-        />
-        <BlogCard
-          titleEn="Carnival, Culture & Currency: Brazil's Economic Heartbeat"
-          titleZh="狂欢节、文化与货币：巴西的经济脉搏"
-          titlePt="Carnaval, Cultura e Câmbio: O Pulso Econômico do Brasil"
-          excerptEn="Brazil's world-famous Carnival isn't just a cultural celebration — it's a major economic event that impacts tourism, spending, and international transfers."
-          excerptZh="巴西举世闻名的狂欢节不仅是文化庆典，更是影响旅游、消费和国际汇款的重大经济事件。"
-          excerptPt="O famoso Carnaval do Brasil não é apenas uma celebração cultural — é um grande evento econômico que impacta turismo, gastos e transferências internacionais."
-          date="Feb 23, 2026"
-          href="/today-brazil/feb-23"
-          image="https://images.pexels.com/photos/3293148/pexels-photo-3293148.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
-          tag="Culture"
-        />
+        {latestPosts.map((post: any) => (
+          <BlogCard
+            titleEn={post.title_en}
+            titleZh={post.title_zh}
+            titlePt={post.title_pt}
+            excerptEn={post.excerpt_en}
+            excerptZh={post.excerpt_zh}
+            excerptPt={post.excerpt_pt}
+            date={formatDate(post.published_date)}
+            href={`/today-brazil/${post.slug}`}
+            image={post.image_url}
+            tag={post.tag}
+          />
+        ))}
       </div>
     </div>
   </section>

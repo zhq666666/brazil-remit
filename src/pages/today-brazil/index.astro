@@ -2,80 +2,32 @@
 import Layout from '../../layouts/Layout.astro';
 import BlogCard from '../../components/BlogCard.astro';
 
-const posts = [
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+const res = await fetch(
+  `${supabaseUrl}/rest/v1/articles?select=slug,tag,published_date,image_url,title_en,title_zh,title_pt,excerpt_en,excerpt_zh,excerpt_pt&order=published_date.desc`,
   {
-    titleEn: "Brazil's Diaspora and the Remittance Lifeline",
-    titleZh: "巴西海外侨民与汇款生命线",
-    titlePt: "A Diáspora Brasileira e a Linha de Vida das Remessas",
-    excerptEn: "Millions of Brazilians living abroad send money home every year, creating a vital economic lifeline for families across the country.",
-    excerptZh: "数百万在海外生活的巴西人每年都会向国内汇款，为全国各地的家庭创造了重要的经济生命线。",
-    excerptPt: "Milhões de brasileiros no exterior enviam dinheiro para casa todo ano, criando uma vital linha de vida econômica para famílias em todo o país.",
-    date: "Feb 25, 2026",
-    href: "/today-brazil/feb-25",
-    image: "https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-    tag: "Remittance",
-  },
-  {
-    titleEn: "PIX Goes International: Brazil's Payment Revolution",
-    titleZh: "PIX走向国际：巴西的支付革命",
-    titlePt: "PIX vai Internacional: A Revolução dos Pagamentos do Brasil",
-    excerptEn: "Brazil's instant payment system PIX is expanding internationally, opening new avenues for faster and cheaper cross-border money transfers.",
-    excerptZh: "巴西即时支付系统PIX正在向国际扩展，为更快速、更廉价的跨境汇款开辟了新途径。",
-    excerptPt: "O sistema PIX do Brasil está se expandindo internacionalmente, abrindo novas vias para transferências mais rápidas e baratas.",
-    date: "Feb 24, 2026",
-    href: "/today-brazil/feb-24",
-    image: "https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-    tag: "Technology",
-  },
-  {
-    titleEn: "Carnival, Culture & Currency: Brazil's Economic Heartbeat",
-    titleZh: "狂欢节、文化与货币：巴西的经济脉搏",
-    titlePt: "Carnaval, Cultura e Câmbio: O Pulso Econômico do Brasil",
-    excerptEn: "Brazil's world-famous Carnival isn't just a cultural celebration — it's a major economic event that impacts tourism, spending, and international transfers.",
-    excerptZh: "巴西举世闻名的狂欢节不仅是文化庆典，更是影响旅游、消费和国际汇款的重大经济事件。",
-    excerptPt: "O Carnaval do Brasil não é apenas uma celebração cultural — é um grande evento econômico que impacta turismo e transferências internacionais.",
-    date: "Feb 23, 2026",
-    href: "/today-brazil/feb-23",
-    image: "https://images.pexels.com/photos/3293148/pexels-photo-3293148.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-    tag: "Culture",
-  },
-  {
-    titleEn: "BRL Exchange Rate Analysis: What February 2026 Means for Senders",
-    titleZh: "雷亚尔汇率分析：2026年2月对汇款人意味着什么",
-    titlePt: "Análise da Taxa de Câmbio BRL: O Que Fevereiro de 2026 Significa para Quem Envia",
-    excerptEn: "The Brazilian real has shown notable movement against major currencies in February 2026. Here's what that means for people sending money from Brazil.",
-    excerptZh: "2026年2月，巴西雷亚尔兑主要货币出现明显波动。这对从巴西汇款的人意味着什么？",
-    excerptPt: "O real brasileiro mostrou movimento notável frente às principais moedas em fevereiro de 2026. Veja o que isso significa para quem envia dinheiro do Brasil.",
-    date: "Feb 22, 2026",
-    href: "/today-brazil/feb-22",
-    image: "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-    tag: "Exchange Rates",
-  },
-  {
-    titleEn: "Top 5 Ways to Send Money from Brazil in 2026",
-    titleZh: "2026年从巴西汇款的5大方式",
-    titlePt: "As 5 Melhores Formas de Enviar Dinheiro do Brasil em 2026",
-    excerptEn: "From traditional bank wires to modern digital platforms, here are the most reliable and cost-effective ways to send money internationally from Brazil today.",
-    excerptZh: "从传统银行电汇到现代数字平台，以下是目前从巴西向国际汇款最可靠、最具成本效益的方式。",
-    excerptPt: "De transferências bancárias tradicionais a plataformas digitais modernas, veja as formas mais confiáveis e econômicas de enviar dinheiro do Brasil.",
-    date: "Feb 21, 2026",
-    href: "/today-brazil/feb-21",
-    image: "https://images.pexels.com/photos/4386476/pexels-photo-4386476.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-    tag: "Guide",
-  },
-  {
-    titleEn: "Brazil's Remittance Market: Key Trends in 2025–2026",
-    titleZh: "巴西汇款市场：2025-2026年关键趋势",
-    titlePt: "Mercado de Remessas do Brasil: Tendências Principais em 2025–2026",
-    excerptEn: "Brazil's remittance market is undergoing a digital transformation. This overview explores the key trends shaping how Brazilians send money abroad.",
-    excerptZh: "巴西汇款市场正经历数字化转型。本文概述了塑造巴西人向海外汇款方式的关键趋势。",
-    excerptPt: "O mercado de remessas do Brasil está passando por uma transformação digital. Esta visão geral explora as principais tendências que moldam como os brasileiros enviam dinheiro para o exterior.",
-    date: "Feb 20, 2026",
-    href: "/today-brazil/feb-20",
-    image: "https://images.pexels.com/photos/1796743/pexels-photo-1796743.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
-    tag: "Market",
-  },
-];
+    headers: {
+      apikey: supabaseKey,
+      Authorization: `Bearer ${supabaseKey}`,
+    },
+  }
+);
+const posts = await res.json();
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr + 'T12:00:00Z');
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+const newest = posts[0]?.published_date ?? '';
+const oldest = posts[posts.length - 1]?.published_date ?? '';
+
+function shortDate(dateStr: string) {
+  const d = new Date(dateStr + 'T12:00:00Z');
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
 ---
 
 <Layout
@@ -90,9 +42,7 @@ const posts = [
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="inline-flex items-center gap-2 bg-brazil-green/20 text-brazil-yellow text-sm font-semibold px-4 py-2 rounded-full mb-4">
         <span class="w-2 h-2 bg-brazil-yellow rounded-full"></span>
-        <span data-lang-content="en">Feb 20 – Feb 25, 2026</span>
-        <span data-lang-content="zh">2026年2月20日 – 2月25日</span>
-        <span data-lang-content="pt">20 fev – 25 fev. 2026</span>
+        <span>{shortDate(oldest)} – {shortDate(newest)}, 2026</span>
       </div>
       <h1 class="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
         <span data-lang-content="en">Today's Brazil</span>
@@ -111,17 +61,17 @@ const posts = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post) => (
+        {posts.map((post: any) => (
           <BlogCard
-            titleEn={post.titleEn}
-            titleZh={post.titleZh}
-            titlePt={post.titlePt}
-            excerptEn={post.excerptEn}
-            excerptZh={post.excerptZh}
-            excerptPt={post.excerptPt}
-            date={post.date}
-            href={post.href}
-            image={post.image}
+            titleEn={post.title_en}
+            titleZh={post.title_zh}
+            titlePt={post.title_pt}
+            excerptEn={post.excerpt_en}
+            excerptZh={post.excerpt_zh}
+            excerptPt={post.excerpt_pt}
+            date={formatDate(post.published_date)}
+            href={`/today-brazil/${post.slug}`}
+            image={post.image_url}
             tag={post.tag}
           />
         ))}

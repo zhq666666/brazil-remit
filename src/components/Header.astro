@@ -123,6 +123,7 @@ const currentPath = Astro.url.pathname;
         >
           <span id="lang-flag">🇺🇸</span>
           <span id="lang-label">EN</span>
+
         </button>
 
         <!-- Mobile menu button -->
@@ -179,16 +180,16 @@ const currentPath = Astro.url.pathname;
   const mobileMenu = document.getElementById('mobile-menu');
 
   const langCycle: Record<string, { next: string; flag: string; label: string }> = {
-    en: { next: 'zh', flag: '🇨🇳', label: 'ZH' },
-    zh: { next: 'pt', flag: '🇧🇷', label: 'PT' },
-    pt: { next: 'en', flag: '🇺🇸', label: 'EN' },
+    en: { next: 'zh', flag: '🇺🇸', label: 'EN' },
+    zh: { next: 'pt', flag: '🇨🇳', label: '中文' },
+    pt: { next: 'en', flag: '🇧🇷', label: 'PT' },
   };
 
   function applyLang(lang: string) {
     document.documentElement.setAttribute('data-lang', lang);
-    const next = langCycle[lang] || langCycle['en'];
-    if (langFlag) langFlag.textContent = next.flag;
-    if (langLabel) langLabel.textContent = next.label;
+    const current = langCycle[lang] || langCycle['en'];
+    if (langFlag) langFlag.textContent = current.flag;
+    if (langLabel) langLabel.textContent = current.label;
   }
 
   const savedLang = localStorage.getItem('lang') || 'en';
