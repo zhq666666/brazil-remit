@@ -80,31 +80,12 @@ const currentPath = Astro.url.pathname;
           </div>
         </div>
 
-        <!-- Today's Brazil Dropdown -->
-        <div class="relative group">
-          <button class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brazil-green rounded-md transition-colors flex items-center gap-1">
-            <span data-lang-content="en">Today's Brazil</span>
-            <span data-lang-content="zh">今日巴西</span>
-            <span data-lang-content="pt">Brasil Hoje</span>
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="absolute top-full left-0 mt-1 w-52 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <div class="py-2">
-              <a href="/today-brazil" class="block px-4 py-2 text-sm font-medium text-brazil-green hover:bg-green-50">
-                <span data-lang-content="en">All Posts</span>
-                <span data-lang-content="zh">全部文章</span>
-                <span data-lang-content="pt">Todos os Posts</span>
-              </a>
-              <div class="border-t border-gray-100 my-1"></div>
-              <a href="/today-brazil/feb-25" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-brazil-green">Feb 25, 2026</a>
-              <a href="/today-brazil/feb-24" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-brazil-green">Feb 24, 2026</a>
-              <a href="/today-brazil/feb-23" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-brazil-green">Feb 23, 2026</a>
-              <a href="/today-brazil/feb-22" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-brazil-green">Feb 22, 2026</a>
-              <a href="/today-brazil/feb-21" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-brazil-green">Feb 21, 2026</a>
-              <a href="/today-brazil/feb-20" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-brazil-green">Feb 20, 2026</a>
-            </div>
-          </div>
-        </div>
+        <!-- Today's Brazil -->
+        <a href="/today-brazil" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brazil-green rounded-md transition-colors">
+          <span data-lang-content="en">Today's Brazil</span>
+          <span data-lang-content="zh">今日巴西</span>
+          <span data-lang-content="pt">Brasil Hoje</span>
+        </a>
 
         <a href="/faq" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brazil-green rounded-md transition-colors">
           <span data-lang-content="en">FAQ</span>

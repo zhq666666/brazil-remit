@@ -14,9 +14,9 @@ interface Props {
 const { titleEn, titleZh, titlePt, excerptEn, excerptZh, excerptPt, date, href, image, tag } = Astro.props;
 ---
 <article class="card group flex flex-col h-full relative">
-  <a href={href} class="absolute inset-0 z-10" aria-label={titleEn}></a>
+  <a href={href} class="absolute inset-0 z-10 rounded-2xl" aria-label={titleEn} tabindex="0"></a>
   {image && (
-    <div class="overflow-hidden h-48">
+    <div class="overflow-hidden h-48 flex-shrink-0">
       <img
         src={image}
         alt={titleEn}
@@ -33,14 +33,14 @@ const { titleEn, titleZh, titlePt, excerptEn, excerptZh, excerptPt, date, href, 
     <h3 class="font-display font-semibold text-brazil-blue text-lg leading-snug mb-2 group-hover:text-brazil-green transition-colors">
       <span data-lang-content="en">{titleEn}</span>
       <span data-lang-content="zh">{titleZh}</span>
-      <span data-lang-content="pt">{titlePt}</span>
+      <span data-lang-content="pt">{titlePt ?? titleEn}</span>
     </h3>
     <p class="text-gray-500 text-sm leading-relaxed flex-1">
       <span data-lang-content="en">{excerptEn}</span>
       <span data-lang-content="zh">{excerptZh}</span>
-      <span data-lang-content="pt">{excerptPt}</span>
+      <span data-lang-content="pt">{excerptPt ?? excerptEn}</span>
     </p>
-    <span class="mt-4 inline-flex items-center gap-1 text-brazil-green font-semibold text-sm group-hover:gap-2 transition-all">
+    <span class="relative z-20 mt-4 inline-flex items-center gap-1 text-brazil-green font-semibold text-sm pointer-events-none group-hover:gap-2 transition-all">
       <span data-lang-content="en">Read More</span>
       <span data-lang-content="zh">阅读更多</span>
       <span data-lang-content="pt">Leia Mais</span>

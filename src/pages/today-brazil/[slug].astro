@@ -14,7 +14,9 @@ export async function getStaticPaths() {
       },
     }
   );
+  if (!res.ok) throw new Error(`Supabase fetch failed: ${res.status} ${res.statusText}`);
   const articles = await res.json();
+  if (!Array.isArray(articles)) throw new Error('Unexpected articles response from Supabase');
 
   const slugMap: Record<string, { title_en: string; slug: string }> = {};
   for (const a of articles) {

@@ -14,6 +14,7 @@ const res = await fetch(
     },
   }
 );
+if (!res.ok) throw new Error(`Supabase fetch failed: ${res.status} ${res.statusText}`);
 const posts = await res.json();
 
 function formatDate(dateStr: string) {
