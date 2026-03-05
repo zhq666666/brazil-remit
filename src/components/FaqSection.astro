@@ -1,0 +1,179 @@
+---
+interface FaqItem {
+  categoryEn: string;
+  categoryZh: string;
+  categoryPt: string;
+  icon: string;
+  questions: {
+    questionEn: string;
+    questionZh: string;
+    questionPt: string;
+    answerEn: string;
+    answerZh: string;
+    answerPt: string;
+  }[];
+}
+
+const faqs: FaqItem[] = [
+  {
+    categoryEn: "Basic Operations",
+    categoryZh: "基础操作",
+    categoryPt: "Operações Básicas",
+    icon: "💱",
+    questions: [
+      {
+        questionEn: "What are the remittance limits for individuals and businesses in Brazil?",
+        questionZh: "巴西国际汇款的个人 / 企业额度限制是多少？",
+        questionPt: "Quais são os limites de remessa para pessoas físicas e jurídicas no Brasil?",
+        answerEn: "For individuals, there is no fixed annual cap on international remittances, but transfers above R$10,000 per transaction must be declared to Banco Central do Brasil (BCB) via the financial institution. Transfers exceeding R$100,000 per month require enhanced documentation explaining the purpose. For businesses (PJ - Pessoa Jurídica), international transfers must be fully justified with commercial invoices, contracts, or regulatory filings. The IOF (Imposto sobre Operações Financeiras) rate of 0.38% applies to most personal transfers. Large-volume business transfers are subject to BCB's FIMMCC reporting system and may require prior registration depending on the nature of the transaction.",
+        answerZh: "对于个人而言，国际汇款没有固定的年度上限，但每笔超过10,000雷亚尔的转账必须通过金融机构向巴西中央银行（BCB）申报。每月超过100,000雷亚尔的转账需要提供说明目的的详细文件。对于企业（PJ - Pessoa Jurídica），国际转账必须有商业发票、合同或监管文件作为充分依据。大多数个人转账适用0.38%的IOF（金融操作税）税率。大额商业转账须遵守BCB的FIMMCC报告系统，并可能根据交易性质需要预先登记。",
+        answerPt: "Para pessoas físicas, não há limite anual fixo para remessas internacionais, mas transferências acima de R$10.000 por transação devem ser declaradas ao Banco Central do Brasil (BCB) através da instituição financeira. Transferências acima de R$100.000 por mês requerem documentação adicional explicando o propósito. Para empresas (PJ), transferências internacionais devem ser justificadas com notas fiscais, contratos ou registros regulatórios. O IOF de 0,38% se aplica à maioria das transferências pessoais. Transferências comerciais de grande volume estão sujeitas ao sistema de relatórios FIMMCC do BCB e podem exigir registro prévio dependendo da natureza da operação."
+      },
+      {
+        questionEn: "How long does it take for remittances to arrive in different countries?",
+        questionZh: "汇款到不同国家的到账时间分别是多久？",
+        questionPt: "Quanto tempo leva para as remessas chegarem em diferentes países?",
+        answerEn: "Delivery times vary significantly by destination and provider. To the USA: 1–3 business days via bank SWIFT; same-day or next-day via digital platforms. To China: 1–2 business days via digital services; 3–5 days via traditional banks. To Hong Kong: 1–2 business days via digital platforms; 2–4 days via SWIFT. To the UK: 1–2 business days; some services offer same-day. To Portugal: often same-day or next-day within SEPA; up to 2 days otherwise. To Japan: 2–3 business days via digital services; 4–5 days via banks. To Singapore: 1–2 business days. Note that weekends, Brazilian public holidays, and destination-country bank holidays can delay processing. Digital remittance platforms generally process transfers faster than traditional banks.",
+        answerZh: "到账时间因目的地和服务商而有显著差异。到美国：通过银行SWIFT需1-3个工作日；通过数字平台当天或次日到账。到中国：通过数字服务需1-2个工作日；通过传统银行需3-5天。到香港：通过数字平台需1-2个工作日；通过SWIFT需2-4天。到英国：通常1-2个工作日；部分服务提供当天到账。到葡萄牙：在SEPA范围内通常当天或次日到账；否则最多2天。到日本：通过数字服务需2-3个工作日；通过银行需4-5天。到新加坡：通常1-2个工作日。请注意，周末、巴西公共假日和目的地国银行假日可能会延迟处理。数字汇款平台通常比传统银行处理转账更快。",
+        answerPt: "Os prazos de entrega variam significativamente por destino e provedor. Para os EUA: 1–3 dias úteis via SWIFT bancário; no mesmo dia ou no dia seguinte via plataformas digitais. Para a China: 1–2 dias úteis via serviços digitais; 3–5 dias via bancos tradicionais. Para Hong Kong: 1–2 dias úteis via plataformas digitais; 2–4 dias via SWIFT. Para o Reino Unido: 1–2 dias úteis; alguns serviços oferecem no mesmo dia. Para Portugal: geralmente no mesmo dia ou no dia seguinte dentro do SEPA; até 2 dias caso contrário. Para o Japão: 2–3 dias úteis via serviços digitais; 4–5 dias via bancos. Para Singapura: 1–2 dias úteis. Fins de semana, feriados públicos brasileiros e feriados bancários no país de destino podem atrasar o processamento."
+      }
+    ]
+  },
+  {
+    categoryEn: "PIX International",
+    categoryZh: "PIX 国际汇款",
+    categoryPt: "PIX Internacional",
+    icon: "⚡",
+    questions: [
+      {
+        questionEn: "Which countries does PIX international remittance support?",
+        questionZh: "PIX 国际汇款支持哪些国家？",
+        questionPt: "Quais países são suportados pelo PIX para remessas internacionais?",
+        answerEn: "As of early 2026, PIX direct international transfers are in an expansion phase. Banco Central do Brasil has signed agreements for PIX interoperability with a growing list of countries. Currently, PIX-to-PIX equivalent transfers are live or in pilot phase with Portugal (via SEPA Instant framework), and bilateral agreements are underway with the USA, UK, and several Latin American countries. For other destinations (China, Japan, Hong Kong, Singapore), specialized fintech platforms use PIX as the domestic on-ramp — you initiate a PIX transfer in Brazil, and the platform converts and delivers the funds internationally. This hybrid model is widely supported. Check with your specific remittance provider for the most current list of PIX-enabled corridors.",
+        answerZh: "截至2026年初，PIX直接国际转账正处于扩展阶段。巴西中央银行已与越来越多的国家签署了PIX互操作协议。目前，PIX对等转账已与葡萄牙（通过SEPA即时框架）实现或处于试点阶段，与美国、英国及几个拉丁美洲国家的双边协议正在推进中。对于其他目的地（中国、日本、香港、新加坡），专业金融科技平台将PIX作为国内入口——您在巴西发起PIX转账，平台将资金转换并在国际上交付。这种混合模式得到广泛支持。请向您的具体汇款服务商查询最新的PIX支持走廊列表。",
+        answerPt: "Em início de 2026, as transferências internacionais diretas via PIX estão em fase de expansão. O Banco Central do Brasil assinou acordos de interoperabilidade do PIX com um número crescente de países. Atualmente, transferências PIX equivalentes estão ativas ou em fase piloto com Portugal (via framework SEPA Instant), e acordos bilaterais estão em andamento com EUA, Reino Unido e vários países latino-americanos. Para outros destinos (China, Japão, Hong Kong, Singapura), plataformas fintech especializadas usam o PIX como ponto de entrada doméstico — você inicia uma transferência PIX no Brasil, e a plataforma converte e entrega os fundos internacionalmente. Consulte seu provedor de remessas específico para obter a lista mais atual de corredores habilitados para PIX."
+      },
+      {
+        questionEn: "How are fees and exchange rates calculated for PIX cross-border transfers?",
+        questionZh: "PIX 跨境转账的手续费和汇率怎么算？",
+        questionPt: "Como são calculadas as taxas e câmbio para transferências cross-border via PIX?",
+        answerEn: "For PIX cross-border transfers, the cost structure has two components: (1) The domestic PIX leg — individual users pay zero fees for PIX transactions within Brazil. The receiving international institution may charge processing fees. (2) The currency conversion — the exchange rate applied is set by the intermediary fintech or bank. This is where significant variation exists. Banks typically apply a 2–4% spread above the mid-market rate (PTAX/BCB reference rate), while digital platforms commonly apply 0.5–1.5%. Always compare the quoted rate against the current PTAX rate published by Banco Central. The IOF tax of 0.38% applies to the BRL equivalent of any international transfer. Some platforms advertise \"zero fee\" but embed the cost in the exchange rate spread, so comparing the all-in exchange rate is the only reliable benchmark.",
+        answerZh: "PIX跨境转账的成本结构包含两个部分：(1) 国内PIX环节——个人用户在巴西境内的PIX交易无需手续费。接收国际机构可能会收取处理费用。(2) 货币兑换——适用的汇率由中间金融科技公司或银行设定。这是变化最大的地方。银行通常在中间市场汇率（PTAX/BCB参考汇率）基础上加收2-4%的差价，而数字平台通常收取0.5-1.5%。请始终将报价汇率与巴西中央银行发布的当前PTAX汇率进行比较。0.38%的IOF税适用于任何国际转账的雷亚尔等值金额。一些平台宣传「零手续费」，但将成本嵌入汇率差价中，因此比较全部到位汇率是唯一可靠的基准。",
+        answerPt: "Para transferências cross-border via PIX, a estrutura de custos tem dois componentes: (1) O trecho doméstico do PIX — usuários individuais pagam zero taxas para transações PIX dentro do Brasil. A instituição internacional receptora pode cobrar taxas de processamento. (2) A conversão de moeda — a taxa de câmbio aplicada é definida pela fintech ou banco intermediário. É aqui que existe variação significativa. Bancos tipicamente aplicam um spread de 2–4% acima da taxa de mercado médio (taxa PTAX/BCB de referência), enquanto plataformas digitais comumente aplicam 0,5–1,5%. Sempre compare a taxa cotada com a taxa PTAX atual publicada pelo Banco Central. O IOF de 0,38% se aplica ao equivalente em BRL de qualquer transferência internacional. Algumas plataformas anunciam 'taxa zero' mas embutem o custo no spread da taxa de câmbio."
+      }
+    ]
+  },
+  {
+    categoryEn: "Documentation & Requirements",
+    categoryZh: "材料与资质",
+    categoryPt: "Documentação e Requisitos",
+    icon: "📋",
+    questions: [
+      {
+        questionEn: "What identity and transaction documents do Brazilian residents need to remit foreign currency?",
+        questionZh: "巴西居民汇外币需要提供什么身份证明 / 交易凭证？",
+        questionPt: "Quais documentos de identidade e comprovantes de transação os residentes brasileiros precisam para remeter moeda estrangeira?",
+        answerEn: "Required documents depend on the transfer amount and purpose. For all transfers: valid CPF (Cadastro de Pessoas Físicas), RG or CNH (Brazilian national ID or driver's license), and proof of the source of funds. For transfers up to R$10,000: basic KYC is sufficient at most licensed platforms. For transfers between R$10,000–R$100,000: proof of purpose (e.g., invoice for goods purchased abroad, tuition payment confirmation, family support declaration). For transfers above R$100,000: detailed commercial contract or legal documentation, declaration of assets and liabilities (for large personal transfers), and potential scrutiny from the platform's compliance team. For businesses (CNPJ holders): corporate documents (contrato social or estatuto), authorized signatory identification, commercial invoices or service agreements, and BCB registration for certain transaction types. Non-residents remitting from Brazil have additional requirements and should consult a financial institution directly.",
+        answerZh: "所需文件取决于转账金额和目的。所有转账均需：有效的CPF（个人纳税人号码）、RG或CNH（巴西国民身份证或驾驶执照）以及资金来源证明。1万雷亚尔以下的转账：在大多数持牌平台，基本KYC即可满足要求。1万至10万雷亚尔的转账：需要目的证明（如在境外购买商品的发票、学费支付确认、家庭支持声明等）。10万雷亚尔以上的转账：详细的商业合同或法律文件、资产负债申报（大额个人转账），以及平台合规团队的潜在审查。企业（CNPJ持有人）：公司文件（合同或章程）、授权签字人身份证明、商业发票或服务协议，以及某些交易类型的BCB注册。在巴西汇款的非居民有额外要求，应直接咨询金融机构。",
+        answerPt: "Os documentos necessários dependem do valor e propósito da transferência. Para todas as transferências: CPF válido, RG ou CNH, e comprovante da origem dos fundos. Para transferências até R$10.000: KYC básico é suficiente na maioria das plataformas licenciadas. Para transferências entre R$10.000–R$100.000: comprovante de propósito (ex: nota fiscal de compras no exterior, confirmação de pagamento de mensalidade, declaração de suporte familiar). Para transferências acima de R$100.000: contrato comercial detalhado ou documentação legal, declaração de ativos e passivos (para grandes transferências pessoais), e potencial análise da equipe de compliance da plataforma. Para empresas (titulares de CNPJ): documentos corporativos (contrato social ou estatuto), identificação do signatário autorizado, notas fiscais ou acordos de serviço, e registro no BCB para certos tipos de transação."
+      }
+    ]
+  },
+  {
+    categoryEn: "Problem Resolution",
+    categoryZh: "问题解决",
+    categoryPt: "Resolução de Problemas",
+    icon: "🔧",
+    questions: [
+      {
+        questionEn: "What should I do if the recipient hasn't received the transfer?",
+        questionZh: "汇款后对方未收到怎么办？",
+        questionPt: "O que devo fazer se o destinatário não recebeu a transferência?",
+        answerEn: "First, check the transfer status in your platform's app or dashboard — most transfers show real-time tracking. Confirm the delivery estimate hasn't passed (allow 1 extra business day for banking processing). If the transfer shows 'completed' but funds haven't arrived: (1) Verify the recipient's bank account details were entered correctly — name, account number, IBAN/SWIFT/CNAPS code, and bank branch. (2) Ask the recipient to check with their bank directly, as some banks hold international transfers for additional verification. (3) Contact your remittance provider's customer support with the transaction reference number (typically a 10–16 digit code). Providers are legally required to investigate and respond within 5–10 business days. (4) If the funds were sent to a wrong account due to a data entry error, the recovery process can take 15–30 business days depending on the destination country's banking regulations. Keep all transaction receipts and confirmation emails as they are essential for disputes.",
+        answerZh: "首先，在您的平台应用或仪表板中检查转账状态——大多数转账显示实时跟踪信息。确认交付预计时间是否已过（银行处理额外留出1个工作日）。如果转账显示「已完成」但资金尚未到账：(1) 核实收款人的银行账户信息是否输入正确——姓名、账号、IBAN/SWIFT/CNAPS代码和银行支行。(2) 请收款人直接向其银行核查，因为一些银行会暂时扣留国际转账进行额外核验。(3) 携带交易参考编号（通常为10-16位数字代码）联系您的汇款服务商客户支持。服务商在法律上必须在5-10个工作日内进行调查并回复。(4) 如果由于数据输入错误将资金汇入错误账户，根据目的地国家的银行法规，追回过程可能需要15-30个工作日。请保留所有交易收据和确认邮件，因为它们对于争议处理至关重要。",
+        answerPt: "Primeiro, verifique o status da transferência no aplicativo ou painel da sua plataforma — a maioria das transferências mostra rastreamento em tempo real. Confirme se o prazo estimado de entrega não passou (aguarde 1 dia útil extra para processamento bancário). Se a transferência mostrar 'concluída' mas os fundos não chegaram: (1) Verifique se os dados bancários do destinatário foram inseridos corretamente — nome, número de conta, código IBAN/SWIFT/CNAPS e agência bancária. (2) Peça ao destinatário que verifique diretamente com seu banco, pois alguns bancos retêm transferências internacionais para verificação adicional. (3) Entre em contato com o suporte ao cliente do seu provedor de remessas com o número de referência da transação (geralmente um código de 10–16 dígitos). Os provedores são legalmente obrigados a investigar e responder dentro de 5–10 dias úteis. (4) Se os fundos foram enviados para uma conta errada devido a erro de digitação, o processo de recuperação pode levar 15–30 dias úteis dependendo das regulações bancárias do país de destino."
+      },
+      {
+        questionEn: "Can I cancel a remittance due to exchange rate fluctuations, and can fees be refunded?",
+        questionZh: "汇率波动可以撤销汇款吗？手续费可以退还吗？",
+        questionPt: "Posso cancelar uma remessa devido a flutuações cambiais, e as taxas podem ser reembolsadas?",
+        answerEn: "Cancellation policies vary by provider and transfer status. Generally: (1) Before processing begins: Most digital platforms allow cancellation within a short window (typically 15–30 minutes) after submission if the transfer hasn't been picked up for processing. During this window, a full refund including fees is usually possible. (2) After processing has started but before the recipient receives funds: Cancellation becomes significantly more complex. Some providers allow cancellation for an administrative fee (typically R$20–R$80). The exchange rate applied is usually the rate at the time of cancellation, not the original rate — meaning you may receive more or less BRL than you sent depending on market movement. (3) After the recipient receives funds: Cancellation is generally impossible. The funds would need to be voluntarily returned by the recipient. Exchange rate fluctuations alone are not a legally recognized basis for cancellation after a transfer is processed. (4) In cases of platform error or technical failure: Full refunds including fees are typically guaranteed by the provider. Always review the specific Terms & Conditions of your provider before initiating a transfer if you're concerned about rate volatility.",
+        answerZh: "取消政策因服务商和转账状态而异。通常情况下：(1) 处理开始前：大多数数字平台允许在提交后的短时间内（通常15-30分钟）取消，前提是转账尚未被提取处理。在此窗口期内，通常可以全额退款，包括手续费。(2) 处理已开始但收款人尚未收到资金：取消变得更加复杂。一些服务商允许取消，但需收取行政费用（通常20-80雷亚尔）。适用的汇率通常是取消时的汇率，而非原始汇率——这意味着您收到的雷亚尔可能多于或少于发送金额，取决于市场走势。(3) 收款人已收到资金后：通常无法取消。资金需要由收款人自愿退回。仅因汇率波动在转账处理后并不是法律上认可的取消依据。(4) 如果是平台错误或技术故障：通常由服务商保证全额退款，包括手续费。如果您担心汇率波动，在发起转账前请务必查看您的服务商的具体条款和条件。",
+        answerPt: "As políticas de cancelamento variam por provedor e status da transferência. Geralmente: (1) Antes do processamento começar: A maioria das plataformas digitais permite cancelamento dentro de uma janela curta (geralmente 15–30 minutos) após o envio, se a transferência não foi iniciada para processamento. Durante esta janela, um reembolso completo incluindo taxas geralmente é possível. (2) Após o processamento ter começado mas antes do destinatário receber os fundos: O cancelamento se torna significativamente mais complexo. Alguns provedores permitem cancelamento por uma taxa administrativa (geralmente R$20–R$80). A taxa de câmbio aplicada é geralmente a taxa no momento do cancelamento, não a taxa original. (3) Após o destinatário receber os fundos: O cancelamento é geralmente impossível. As flutuações cambiais por si só não são uma base legalmente reconhecida para cancelamento após uma transferência ser processada. (4) Em casos de erro da plataforma ou falha técnica: Reembolsos completos incluindo taxas são geralmente garantidos pelo provedor."
+      }
+    ]
+  },
+  {
+    categoryEn: "Policy & Compliance",
+    categoryZh: "政策与合规",
+    categoryPt: "Política e Conformidade",
+    icon: "🏛️",
+    questions: [
+      {
+        questionEn: "What are Banco Central's latest regulatory requirements for international remittances?",
+        questionZh: "巴西央行对国际汇款的最新监管要求是什么？",
+        questionPt: "Quais são os requisitos regulatórios mais recentes do Banco Central para remessas internacionais?",
+        answerEn: "The 2025–2026 regulatory framework from Banco Central do Brasil (BCB) reflects a deliberate liberalization designed to increase competition and reduce costs. Key requirements as of 2026: (1) Authorized operators: All institutions facilitating international transfers must hold either a BCB banking license (Type B or above) or an Instituição de Pagamento (IP) license with FX authorization. Using unlicensed services is illegal and offers no consumer protection. (2) Reporting thresholds: Transfers above R$10,000 per transaction are automatically reported to BCB's SISBACEN system. Monthly cumulative transfers above R$100,000 by an individual trigger enhanced due diligence reviews. (3) AML/CFT compliance: All licensed operators must comply with Brazil's Anti-Money Laundering Law (Law 9.613/98, updated 2022) and FATF recommendations. Customer identity verification (KYC) is mandatory for all transfers. (4) IOF rates: Personal remittances are taxed at 0.38% IOF. Some tourism-related FX transactions carry higher rates. Business transfers for trade purposes may qualify for reduced rates. (5) Digital reporting: The new 2026 framework replaced paper-based filings with electronic submissions through SISBACEN for business transfers above R$50,000. (6) Consumer rights: BCB's Resolução 4.935 guarantees the right to receive a full fee and rate disclosure before executing any transfer, and the right to cancel within the legally defined window.",
+        answerZh: "巴西中央银行（BCB）2025-2026年监管框架反映了一种蓄意的自由化方向，旨在增加竞争并降低成本。截至2026年的主要要求：(1) 授权运营商：所有促进国际转账的机构必须持有BCB银行牌照（B型或以上）或持有外汇授权的支付机构（IP）牌照。使用无牌照服务属于违法行为，且不提供任何消费者保护。(2) 报告门槛：每笔超过10,000雷亚尔的转账会自动报告给BCB的SISBACEN系统。个人每月累计转账超过100,000雷亚尔将触发强化尽职调查审查。(3) 反洗钱/打击恐怖融资合规：所有持牌运营商必须遵守巴西反洗钱法（9.613/98法，2022年更新）和金融行动特别工作组建议。对所有转账强制执行客户身份核验（KYC）。(4) IOF税率：个人汇款征收0.38% IOF。部分旅游相关外汇交易税率较高。用于贸易目的的商业转账可能享受降低税率。(5) 数字报告：新的2026年框架将商业转账（超过50,000雷亚尔）的纸质申报替换为通过SISBACEN的电子提交。(6) 消费者权益：BCB的第4935号决议保障消费者在执行任何转账前获得完整费用和汇率披露的权利，以及在法定窗口期内取消的权利。",
+        answerPt: "O framework regulatório 2025–2026 do Banco Central do Brasil (BCB) reflete uma liberalização deliberada projetada para aumentar a concorrência e reduzir custos. Principais requisitos em 2026: (1) Operadores autorizados: Todas as instituições que facilitam transferências internacionais devem ter licença bancária BCB (Tipo B ou superior) ou licença de Instituição de Pagamento (IP) com autorização FX. Usar serviços não licenciados é ilegal e não oferece proteção ao consumidor. (2) Limites de reporte: Transferências acima de R$10.000 por transação são automaticamente reportadas ao sistema SISBACEN do BCB. Transferências mensais acumuladas acima de R$100.000 por um indivíduo acionam revisões aprimoradas de due diligence. (3) Conformidade AML/CFT: Todos os operadores licenciados devem cumprir a Lei de Combate à Lavagem de Dinheiro do Brasil (Lei 9.613/98, atualizada em 2022) e as recomendações do GAFI. A verificação de identidade do cliente (KYC) é obrigatória para todas as transferências. (4) Taxas de IOF: Remessas pessoais são tributadas com 0,38% de IOF. (5) Reportes digitais: O novo framework de 2026 substituiu os arquivamentos em papel por submissões eletrônicas via SISBACEN para transferências comerciais acima de R$50.000. (6) Direitos do consumidor: A Resolução BCB 4.935 garante o direito de receber divulgação completa de taxas e câmbio antes de executar qualquer transferência."
+      }
+    ]
+  }
+];
+---
+
+<section class="py-20 bg-white" id="faq">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span class="inline-block px-3 py-1 bg-brazil-green/10 text-brazil-green text-sm font-semibold rounded-full mb-3">FAQ</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-brazil-blue mb-4">
+        <span data-lang-content="en">Frequently Asked Questions</span>
+        <span data-lang-content="zh">常见问题解答</span>
+        <span data-lang-content="pt">Perguntas Frequentes</span>
+      </h2>
+      <p class="text-gray-500 max-w-2xl mx-auto">
+        <span data-lang-content="en">Everything you need to know about international remittances from Brazil — regulations, fees, timing, and more.</span>
+        <span data-lang-content="zh">关于从巴西国际汇款您需要了解的一切——法规、费用、时间及更多内容。</span>
+        <span data-lang-content="pt">Tudo o que você precisa saber sobre remessas internacionais do Brasil — regulamentações, taxas, prazos e mais.</span>
+      </p>
+    </div>
+
+    <div class="space-y-10">
+      {faqs.map((category, catIndex) => (
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <span class="text-2xl">{category.icon}</span>
+            <h3 class="font-display text-xl font-bold text-brazil-blue">
+              <span data-lang-content="en">{category.categoryEn}</span>
+              <span data-lang-content="zh">{category.categoryZh}</span>
+              <span data-lang-content="pt">{category.categoryPt}</span>
+            </h3>
+          </div>
+          <div class="space-y-3">
+            {category.questions.map((faq, qIndex) => (
+              <details class="group border border-gray-200 rounded-xl overflow-hidden" id={`faq-${catIndex}-${qIndex}`}>
+                <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer hover:bg-gray-50 transition-colors list-none">
+                  <span class="font-semibold text-gray-800 text-sm sm:text-base">
+                    <span data-lang-content="en">{faq.questionEn}</span>
+                    <span data-lang-content="zh">{faq.questionZh}</span>
+                    <span data-lang-content="pt">{faq.questionPt}</span>
+                  </span>
+                  <svg class="w-5 h-5 text-brazil-green flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </summary>
+                <div class="px-5 pb-5 pt-2 border-t border-gray-100 bg-gray-50/50">
+                  <div class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                    <span data-lang-content="en">{faq.answerEn}</span>
+                    <span data-lang-content="zh">{faq.answerZh}</span>
+                    <span data-lang-content="pt">{faq.answerPt}</span>
+                  </div>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
