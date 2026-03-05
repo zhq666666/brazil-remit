@@ -18,6 +18,117 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'mar-06',
+    tag: 'Economy',
+    published_date: '2026-03-06',
+    image_url: 'https://images.pexels.com/photos/6801874/pexels-photo-6801874.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop',
+    title_en: "Brazil's Economic Outlook for 2026: Growth, Inflation, and Opportunity",
+    title_zh: '2026年巴西经济展望：增长、通胀与机遇',
+    title_pt: 'Perspectivas Econômicas do Brasil para 2026: Crescimento, Inflação e Oportunidade',
+    excerpt_en: "As 2026 unfolds, Brazil's economy faces a mix of promising growth signals and persistent inflationary pressures. Here's what experts are watching.",
+    excerpt_zh: '随着2026年的展开，巴西经济面临着充满希望的增长信号与持续通胀压力的交织。以下是专家们正在关注的内容。',
+    excerpt_pt: 'Com o desenrolar de 2026, a economia brasileira enfrenta uma combinação de sinais de crescimento promissores e pressões inflacionárias persistentes. Veja o que os especialistas estão observando.',
+    body_en: `<p>Brazil enters 2026 with cautious optimism. GDP growth projections for the year hover around 2.5%, supported by robust agricultural exports, a recovering services sector, and increased foreign direct investment. However, inflationary pressures — particularly in food and energy — continue to challenge the Banco Central do Brasil's target of 3.5%.</p>
+<p>The labor market has shown resilience. Unemployment, which peaked at over 14% during the pandemic years, has stabilized below 7% nationally. This improvement in household income has fueled domestic consumption, a key driver of the Brazilian economy.</p>
+<p>Currency dynamics remain a central concern for Brazilians with international financial ties. The Brazilian real has traded in a wide band against the US dollar, making exchange rate management critical for anyone sending or receiving money across borders. For those using remittance services to transfer funds to destinations like <a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">China</a>, <a href="https://www.pandaremit.com/en/bra/send-money-to-unitedstates" target="_blank" rel="noopener" class="text-brazil-green hover:underline">the United States</a>, or <a href="https://www.pandaremit.com/en/bra/send-money-to-japan" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Japan</a>, monitoring the BRL exchange rate is more important than ever.</p>
+<p>Investment in infrastructure remains a bright spot. The government's acceleration program for concessions in ports, highways, and energy has attracted both domestic and international investors, laying the groundwork for sustainable long-term growth.</p>
+<p>For the Brazilian diaspora and international businesses operating in Brazil, 2026 represents both challenge and opportunity. Those who stay informed and leverage efficient financial tools — including modern remittance platforms — will be best positioned to navigate this dynamic economic environment.</p>`,
+    body_zh: `<p>巴西以谨慎的乐观态度进入2026年。今年的GDP增长预测约为2.5%，得到强劲农业出口、服务业复苏和外国直接投资增加的支撑。然而，尤其是食品和能源方面的通胀压力，继续挑战巴西中央银行3.5%的目标。</p>
+<p>劳动力市场表现出韧性。疫情年间峰值超过14%的失业率，如今已在全国范围内稳定在7%以下。家庭收入的改善推动了国内消费，这是巴西经济的关键驱动力。</p>
+<p>汇率动态仍然是与国际金融有关联的巴西人的核心关注点。巴西雷亚尔兑美元在较宽区间内交易，使得汇率管理对任何需要跨境汇款的人来说都至关重要。对于使用汇款服务向<a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">中国</a>、<a href="https://www.pandaremit.com/en/bra/send-money-to-unitedstates" target="_blank" rel="noopener" class="text-brazil-green hover:underline">美国</a>或<a href="https://www.pandaremit.com/en/bra/send-money-to-japan" target="_blank" rel="noopener" class="text-brazil-green hover:underline">日本</a>等目的地转账的人来说，监控巴西雷亚尔汇率比以往任何时候都更加重要。</p>
+<p>基础设施投资仍是亮点。政府加速推进港口、公路和能源特许权计划，吸引了国内外投资者，为可持续长期增长奠定了基础。</p>
+<p>对于巴西侨民和在巴西运营的国际企业来说，2026年既是挑战也是机遇。那些保持信息灵通并利用高效金融工具——包括现代汇款平台——的人，将处于最佳位置来驾驭这一充满活力的经济环境。</p>`,
+    body_pt: `<p>O Brasil entra em 2026 com otimismo cauteloso. As projeções de crescimento do PIB para o ano giram em torno de 2,5%, sustentadas por exportações agrícolas robustas, recuperação do setor de serviços e aumento do investimento estrangeiro direto. No entanto, pressões inflacionárias — especialmente em alimentos e energia — continuam desafiando a meta de 3,5% do Banco Central do Brasil.</p>
+<p>O mercado de trabalho demonstrou resiliência. O desemprego, que atingiu pico acima de 14% durante os anos da pandemia, se estabilizou abaixo de 7% nacionalmente. Essa melhora na renda familiar impulsionou o consumo doméstico, um motor-chave da economia brasileira.</p>
+<p>A dinâmica cambial continua sendo uma preocupação central para os brasileiros com vínculos financeiros internacionais. O real brasileiro tem negociado em uma ampla faixa frente ao dólar americano, tornando o gerenciamento da taxa de câmbio crítico para qualquer pessoa enviando ou recebendo dinheiro além das fronteiras. Para aqueles que usam serviços de remessa para transferir fundos para destinos como <a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">China</a>, <a href="https://www.pandaremit.com/en/bra/send-money-to-unitedstates" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Estados Unidos</a> ou <a href="https://www.pandaremit.com/en/bra/send-money-to-japan" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Japão</a>, monitorar a taxa de câmbio do BRL é mais importante do que nunca.</p>
+<p>O investimento em infraestrutura continua sendo um ponto positivo. O programa de aceleração de concessões em portos, rodovias e energia atraiu investidores nacionais e internacionais, estabelecendo as bases para um crescimento sustentável de longo prazo.</p>
+<p>Para a diáspora brasileira e as empresas internacionais que operam no Brasil, 2026 representa tanto desafio quanto oportunidade. Aqueles que se mantêm informados e aproveitam ferramentas financeiras eficientes — incluindo plataformas modernas de remessas — estarão melhor posicionados para navegar neste ambiente econômico dinâmico.</p>`,
+    prev_slug: 'mar-05',
+    next_slug: null,
+  },
+  {
+    slug: 'mar-05',
+    tag: 'Finance',
+    published_date: '2026-03-05',
+    image_url: 'https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop',
+    title_en: 'How to Send Money from Brazil in 2026: A Complete Guide',
+    title_zh: '2026年如何从巴西汇款：完整指南',
+    title_pt: 'Como Enviar Dinheiro do Brasil em 2026: Um Guia Completo',
+    excerpt_en: 'Sending money internationally from Brazil has never been more accessible. This guide covers the top methods, fees, and tips to get the best value for your transfer.',
+    excerpt_zh: '从巴西向国际汇款从未如此便捷。本指南涵盖最佳汇款方式、费用及获取最优汇率的技巧。',
+    excerpt_pt: 'Enviar dinheiro internacionalmente do Brasil nunca foi tão acessível. Este guia cobre os melhores métodos, taxas e dicas para obter o melhor valor em sua transferência.',
+    body_en: `<p>Whether you're a Brazilian expat sending support to family back home, an entrepreneur paying international suppliers, or someone investing abroad, understanding your remittance options in 2026 is essential. The market has evolved dramatically — and choosing the wrong service can cost you significantly.</p>
+<p><strong>Bank Wire Transfers</strong> remain available through all major Brazilian banks, but they carry the highest fees and the least favorable exchange rates. For large transfers, the convenience may be worth the cost, but for regular smaller amounts, there are far better alternatives.</p>
+<p><strong>Digital Remittance Platforms</strong> have become the go-to choice for savvy senders. Services like PandaRemit offer real-time exchange rates close to the mid-market rate, transparent fee structures, and fast delivery — often same-day or next-day for popular corridors like Brazil to <a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">China</a>, <a href="https://www.pandaremit.com/en/bra/send-money-to-singapore" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Singapore</a>, and <a href="https://www.pandaremit.com/en/bra/send-money-to-unitedstates" target="_blank" rel="noopener" class="text-brazil-green hover:underline">the United States</a>.</p>
+<p><strong>Key Factors to Compare:</strong></p>
+<ul style="list-style: disc; padding-left: 1.5rem; margin: 0.75rem 0;">
+  <li>Exchange rate margin — how far is it from the mid-market rate?</li>
+  <li>Transfer fees — flat fee or percentage-based?</li>
+  <li>Delivery speed — instant, same-day, or 1-3 business days?</li>
+  <li>Transfer limits — minimum and maximum amounts allowed</li>
+  <li>Recipient options — bank deposit, cash pickup, or mobile wallet?</li>
+</ul>
+<p>Brazil's Central Bank regulations require all international transfers to comply with anti-money laundering (AML) requirements. Reputable platforms handle compliance automatically, but you'll need to verify your identity before sending larger amounts.</p>
+<p>The bottom line: in 2026, you have more options than ever. Take time to compare services before each transfer — even small differences in rates and fees add up significantly over time.</p>`,
+    body_zh: `<p>无论您是支持国内家人的巴西海外侨民、支付国际供应商款项的企业家，还是海外投资者，了解2026年的汇款选择都至关重要。市场已发生巨大变化——选择错误的服务可能让您损失惨重。</p>
+<p><strong>银行电汇</strong>仍可通过所有主要巴西银行办理，但费用最高，汇率也最不优惠。对于大额转账，其便利性可能值得付出代价，但对于定期小额汇款，有更好的替代方案。</p>
+<p><strong>数字汇款平台</strong>已成为精明汇款人的首选。PandaRemit等服务提供接近中间市场汇率的实时汇率、透明的费用结构和快速到账——对于巴西到<a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">中国</a>、<a href="https://www.pandaremit.com/en/bra/send-money-to-singapore" target="_blank" rel="noopener" class="text-brazil-green hover:underline">新加坡</a>和<a href="https://www.pandaremit.com/en/bra/send-money-to-unitedstates" target="_blank" rel="noopener" class="text-brazil-green hover:underline">美国</a>等热门路线，通常当天或次日即可到账。</p>
+<p><strong>关键比较因素：</strong></p>
+<ul style="list-style: disc; padding-left: 1.5rem; margin: 0.75rem 0;">
+  <li>汇率差价——与中间市场汇率相差多少？</li>
+  <li>转账费用——固定费用还是按比例收费？</li>
+  <li>到账速度——即时、当天还是1-3个工作日？</li>
+  <li>转账限额——允许的最低和最高金额</li>
+  <li>收款方式——银行存款、现金提取还是移动钱包？</li>
+</ul>
+<p>巴西中央银行法规要求所有国际转账符合反洗钱（AML）要求。正规平台会自动处理合规事宜，但在发送较大金额之前，您需要验证身份。</p>
+<p>结论：2026年，您拥有比以往更多的选择。每次转账前花时间比较各项服务——即使是汇率和费用上的细微差异，随着时间推移也会产生显著积累。</p>`,
+    body_pt: `<p>Seja você um expatriado brasileiro enviando suporte para a família em casa, um empreendedor pagando fornecedores internacionais ou alguém investindo no exterior, entender suas opções de remessa em 2026 é essencial. O mercado evoluiu dramaticamente — e escolher o serviço errado pode custar caro.</p>
+<p><strong>Transferências Bancárias</strong> permanecem disponíveis em todos os principais bancos brasileiros, mas carregam as taxas mais altas e as taxas de câmbio menos favoráveis. Para transferências grandes, a conveniência pode valer o custo, mas para valores menores regulares, existem alternativas muito melhores.</p>
+<p><strong>Plataformas Digitais de Remessas</strong> tornaram-se a escolha preferida dos remetentes experientes. Serviços como o PandaRemit oferecem taxas de câmbio em tempo real próximas à taxa de mercado intermediária, estruturas de taxas transparentes e entrega rápida — muitas vezes no mesmo dia ou no dia seguinte para corredores populares como Brasil para <a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">China</a>, <a href="https://www.pandaremit.com/en/bra/send-money-to-singapore" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Cingapura</a> e <a href="https://www.pandaremit.com/en/bra/send-money-to-unitedstates" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Estados Unidos</a>.</p>
+<p><strong>Fatores Chave para Comparar:</strong></p>
+<ul style="list-style: disc; padding-left: 1.5rem; margin: 0.75rem 0;">
+  <li>Margem da taxa de câmbio — quão distante está da taxa de mercado intermediária?</li>
+  <li>Taxas de transferência — taxa fixa ou baseada em percentual?</li>
+  <li>Velocidade de entrega — instantânea, no mesmo dia ou 1-3 dias úteis?</li>
+  <li>Limites de transferência — valores mínimos e máximos permitidos</li>
+  <li>Opções para destinatário — depósito bancário, retirada em dinheiro ou carteira digital?</li>
+</ul>
+<p>As regulamentações do Banco Central do Brasil exigem que todas as transferências internacionais estejam em conformidade com os requisitos de combate à lavagem de dinheiro (AML). Plataformas respeitáveis lidam com a conformidade automaticamente, mas você precisará verificar sua identidade antes de enviar valores maiores.</p>
+<p>Conclusão: em 2026, você tem mais opções do que nunca. Reserve tempo para comparar serviços antes de cada transferência — mesmo pequenas diferenças em taxas se acumulam significativamente ao longo do tempo.</p>`,
+    prev_slug: 'mar-04',
+    next_slug: 'mar-06',
+  },
+  {
+    slug: 'mar-04',
+    tag: 'Remittance',
+    published_date: '2026-03-04',
+    image_url: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop',
+    title_en: "Brazil's Fintech Revolution: How Digital Finance Is Reshaping Remittances",
+    title_zh: '巴西金融科技革命：数字金融如何重塑汇款业务',
+    title_pt: 'A Revolução Fintech do Brasil: Como as Finanças Digitais Estão Remodelando as Remessas',
+    excerpt_en: "Brazil has become one of the world's most dynamic fintech markets. Discover how this digital finance boom is making international money transfers faster, cheaper, and more accessible.",
+    excerpt_zh: '巴西已成为全球最具活力的金融科技市场之一。了解这场数字金融热潮如何使国际汇款变得更快、更便宜、更便捷。',
+    excerpt_pt: 'O Brasil se tornou um dos mercados fintech mais dinâmicos do mundo. Descubra como esse boom das finanças digitais está tornando as transferências internacionais de dinheiro mais rápidas, baratas e acessíveis.',
+    body_en: `<p>Brazil's fintech sector has undergone a transformation that few could have predicted a decade ago. Today, the country ranks among the top five fintech markets globally, with hundreds of startups competing to offer innovative financial products to a population that was historically underserved by traditional banking.</p>
+<p>At the center of this revolution is Pix — Brazil's instant payment system launched by the Banco Central do Brasil. With over 150 million users and billions of transactions processed monthly, Pix has normalized instant, zero-fee domestic transfers. This cultural shift has raised consumer expectations across the board — including for international transfers.</p>
+<p>The impact on remittances has been profound. Brazilians who grew accustomed to instant domestic payments now demand the same speed and transparency when sending money abroad. Traditional services charging 5-8% in combined fees and exchange rate margins have lost ground rapidly to digital platforms offering sub-2% all-in costs.</p>
+<p>For popular corridors — such as Brazil to <a href="https://www.pandaremit.com/en/bra/send-money-to-japan" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Japan</a>, <a href="https://www.pandaremit.com/en/bra/send-money-to-hongkong" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Hong Kong</a>, and <a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Portugal</a> — modern platforms now offer near-instant settlement with transparent pricing. The competitive landscape benefits Brazilian consumers directly.</p>
+<p>Looking ahead, the integration of open banking frameworks with international payment rails promises even further improvements. Brazil's fintech revolution is not just a domestic story — it's reshaping how Brazilian money moves around the world.</p>`,
+    body_zh: `<p>巴西的金融科技行业经历了十年前鲜有人能预测的转型。如今，该国位列全球前五大金融科技市场，数百家初创企业竞相为历史上被传统银行忽视的人群提供创新金融产品。</p>
+<p>这场革命的核心是Pix——由巴西中央银行推出的即时支付系统。拥有超过1.5亿用户，每月处理数十亿笔交易，Pix使即时、零费用的国内转账成为常态。这种文化转变提升了消费者对各类金融服务的期望——包括国际转账。</p>
+<p>对汇款业务的影响是深远的。习惯了即时国内支付的巴西人，现在在境外汇款时也要求同样的速度和透明度。收取5-8%综合费用和汇率差价的传统服务，迅速向提供低于2%全包成本的数字平台让步。</p>
+<p>对于热门路线——如巴西到<a href="https://www.pandaremit.com/en/bra/send-money-to-japan" target="_blank" rel="noopener" class="text-brazil-green hover:underline">日本</a>、<a href="https://www.pandaremit.com/en/bra/send-money-to-hongkong" target="_blank" rel="noopener" class="text-brazil-green hover:underline">香港</a>和<a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">葡萄牙</a>——现代平台现在提供几乎即时的结算和透明定价。竞争格局直接惠及巴西消费者。</p>
+<p>展望未来，开放银行框架与国际支付通道的整合有望带来更多改进。巴西的金融科技革命不仅仅是国内故事——它正在重塑巴西资金在全球的流动方式。</p>`,
+    body_pt: `<p>O setor fintech do Brasil passou por uma transformação que poucos poderiam ter previsto há uma década. Hoje, o país ocupa entre os cinco maiores mercados fintech globalmente, com centenas de startups competindo para oferecer produtos financeiros inovadores a uma população historicamente mal atendida pela banca tradicional.</p>
+<p>No centro dessa revolução está o Pix — o sistema de pagamento instantâneo lançado pelo Banco Central do Brasil. Com mais de 150 milhões de usuários e bilhões de transações processadas mensalmente, o Pix normalizou transferências domésticas instantâneas e sem taxas. Essa mudança cultural elevou as expectativas dos consumidores em geral — incluindo para transferências internacionais.</p>
+<p>O impacto nas remessas foi profundo. Os brasileiros acostumados com pagamentos domésticos instantâneos agora exigem a mesma velocidade e transparência ao enviar dinheiro ao exterior. Serviços tradicionais cobrando 5-8% em taxas combinadas e margens de câmbio perderam terreno rapidamente para plataformas digitais oferecendo custos totais abaixo de 2%.</p>
+<p>Para corredores populares — como Brasil para <a href="https://www.pandaremit.com/en/bra/send-money-to-japan" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Japão</a>, <a href="https://www.pandaremit.com/en/bra/send-money-to-hongkong" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Hong Kong</a> e <a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Portugal</a> — plataformas modernas agora oferecem liquidação quase instantânea com preços transparentes. O cenário competitivo beneficia diretamente os consumidores brasileiros.</p>
+<p>Olhando para o futuro, a integração de frameworks de open banking com trilhos de pagamento internacionais promete ainda mais melhorias. A revolução fintech do Brasil não é apenas uma história doméstica — está remodelando como o dinheiro brasileiro se move pelo mundo.</p>`,
+    prev_slug: 'feb-25',
+    next_slug: 'mar-05',
+  },
+  {
     slug: 'feb-25',
     tag: 'Remittance',
     published_date: '2026-02-25',
@@ -44,7 +155,7 @@ export const articles: Article[] = [
 <p>As plataformas digitais de remessas mudaram fundamentalmente o cenário. Onde antes o remetente precisava ir a um banco e pagar altas taxas de transferência, os aplicativos de hoje oferecem taxas competitivas, transferências instantâneas e total transparência nas taxas antes de confirmar. Serviços como o PandaRemit tornam mais fácil do que nunca enviar dinheiro para o Brasil — ou do Brasil para destinos como <a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">China</a> e <a href="https://www.pandaremit.com/en/bra/send-money-to-unitedstates" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Estados Unidos</a>.</p>
 <p>À medida que o Brasil continua a se integrar à economia global, o papel das remessas só crescerá. Entender as opções disponíveis — de taxas a velocidades de entrega a margens de câmbio — é essencial para cada remetente e destinatário na diáspora brasileira.</p>`,
     prev_slug: 'feb-24',
-    next_slug: null,
+    next_slug: 'mar-04',
   },
   {
     slug: 'feb-24',
