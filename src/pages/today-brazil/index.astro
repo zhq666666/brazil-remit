@@ -1,12 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import BlogCard from '../../components/BlogCard.astro';
-import { getCollection } from 'astro:content';
+import { fetchAllArticles } from '../../lib/supabase';
 
-const entries = await getCollection('articles');
-const posts = entries
-  .map(e => ({ slug: e.id, ...e.data }))
-  .sort((a, b) => b.published_date.localeCompare(a.published_date));
+const posts = await fetchAllArticles();
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr + 'T12:00:00Z');
