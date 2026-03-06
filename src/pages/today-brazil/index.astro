@@ -1,24 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import BlogCard from '../../components/BlogCard.astro';
-import { articles } from '../../data/articles';
-
-const posts = articles;
-
-function formatDate(dateStr: string) {
-  const d = new Date(dateStr);
-  const date = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-  const time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
-  return `${date} ${time}`;
-}
-
-const newest = posts[0]?.published_date ?? '';
-const oldest = posts[posts.length - 1]?.published_date ?? '';
-
-function shortDate(dateStr: string) {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-}
 ---
 
 <Layout
@@ -32,8 +13,10 @@ function shortDate(dateStr: string) {
   <section class="bg-gradient-to-br from-brazil-blue to-blue-900 py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="inline-flex items-center gap-2 bg-brazil-green/20 text-brazil-yellow text-sm font-semibold px-4 py-2 rounded-full mb-4">
-        <span class="w-2 h-2 bg-brazil-yellow rounded-full"></span>
-        <span>{shortDate(oldest)} – {shortDate(newest)}, 2026</span>
+        <span class="w-2 h-2 bg-brazil-yellow rounded-full animate-pulse"></span>
+        <span data-lang-content="en">Latest News</span>
+        <span data-lang-content="zh">最新资讯</span>
+        <span data-lang-content="pt">Últimas Notícias</span>
       </div>
       <h1 class="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
         <span data-lang-content="en">Today's Brazil</span>
@@ -51,22 +34,214 @@ function shortDate(dateStr: string) {
   <!-- Blog Grid -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post) => (
-          <BlogCard
-            titleEn={post.title_en}
-            titleZh={post.title_zh}
-            titlePt={post.title_pt}
-            excerptEn={post.excerpt_en}
-            excerptZh={post.excerpt_zh}
-            excerptPt={post.excerpt_pt}
-            date={formatDate(post.published_date)}
-            href={`/today-brazil/${post.slug}`}
-            image={post.image_url}
-            tag={post.tag}
-          />
+
+      <!-- Skeleton loaders shown while fetching -->
+      <div id="skeleton-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Array.from({ length: 6 }).map(() => (
+          <div class="card animate-pulse flex flex-col h-full">
+            <div class="h-48 bg-gray-200 rounded-t-2xl flex-shrink-0"></div>
+            <div class="p-6 flex flex-col flex-1 gap-3">
+              <div class="flex gap-2">
+                <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+              </div>
+              <div class="h-5 bg-gray-200 rounded w-full"></div>
+              <div class="h-5 bg-gray-200 rounded w-4/5"></div>
+              <div class="h-4 bg-gray-100 rounded w-full mt-1"></div>
+              <div class="h-4 bg-gray-100 rounded w-3/4"></div>
+            </div>
+          </div>
         ))}
       </div>
+
+      <!-- Articles rendered by JS -->
+      <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden"></div>
+
+      <!-- Error state -->
+      <div id="articles-error" class="hidden text-center py-12">
+        <p class="text-gray-500 text-lg">Failed to load articles. Please try again.</p>
+      </div>
+
+      <!-- Load More -->
+      <div id="load-more-container" class="mt-12 flex justify-center hidden">
+        <button
+          id="load-more-btn"
+          class="inline-flex items-center gap-2 px-8 py-3 bg-brazil-blue text-white font-semibold rounded-full hover:bg-blue-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <span id="load-more-text-en" data-lang-content="en">Load More Articles</span>
+          <span id="load-more-text-zh" data-lang-content="zh">加载更多文章</span>
+          <span id="load-more-text-pt" data-lang-content="pt">Carregar Mais Artigos</span>
+          <svg id="load-more-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+          <svg id="load-more-spinner" class="w-4 h-4 animate-spin hidden" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+          </svg>
+        </button>
+      </div>
+
     </div>
   </section>
 </Layout>
+
+<script>
+  const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+  const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+  const API_URL = `${SUPABASE_URL}/functions/v1/get-articles`;
+  const LIMIT = 6;
+
+  const tagColorMap: Record<string, string> = {
+    Remittance: 'bg-green-100 text-brazil-green',
+    Technology: 'bg-blue-100 text-brazil-blue',
+    Culture: 'bg-yellow-100 text-yellow-700',
+    'Exchange Rates': 'bg-orange-100 text-orange-700',
+    Guide: 'bg-green-100 text-brazil-green',
+    Market: 'bg-gray-100 text-gray-700',
+    Economy: 'bg-teal-100 text-teal-700',
+    Finance: 'bg-red-100 text-red-700',
+    Tips: 'bg-cyan-100 text-cyan-700',
+    Regulation: 'bg-blue-100 text-blue-700',
+  };
+
+  function formatDate(dateStr: string) {
+    const d = new Date(dateStr);
+    const date = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    const time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+    return `${date} ${time}`;
+  }
+
+  function createArticleCard(article: any): HTMLElement {
+    const tagClass = tagColorMap[article.tag] ?? 'bg-gray-100 text-gray-700';
+    const el = document.createElement('article');
+    el.className = 'card group flex flex-col h-full relative opacity-0 translate-y-4 transition-all duration-500';
+    el.innerHTML = `
+      <a href="/today-brazil/${article.slug}" class="absolute inset-0 z-10 rounded-2xl" aria-label="${article.title_en}" tabindex="0"></a>
+      ${article.image_url ? `
+      <div class="overflow-hidden h-48 flex-shrink-0">
+        <img src="${article.image_url}" alt="${article.title_en}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+      </div>` : ''}
+      <div class="p-6 flex flex-col flex-1">
+        <div class="flex items-center gap-2 mb-3">
+          ${article.tag ? `<span class="px-2 py-0.5 ${tagClass} text-xs font-semibold rounded-full">${article.tag}</span>` : ''}
+          <time class="text-xs text-gray-400">${formatDate(article.published_at)}</time>
+        </div>
+        <h3 class="font-display font-semibold text-brazil-blue text-lg leading-snug mb-2 group-hover:text-brazil-green transition-colors">
+          <span data-lang-content="en">${article.title_en}</span>
+          <span data-lang-content="zh">${article.title_zh}</span>
+          <span data-lang-content="pt">${article.title_pt || article.title_en}</span>
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed flex-1">
+          <span data-lang-content="en">${article.excerpt_en}</span>
+          <span data-lang-content="zh">${article.excerpt_zh}</span>
+          <span data-lang-content="pt">${article.excerpt_pt || article.excerpt_en}</span>
+        </p>
+        <span class="relative z-20 mt-4 inline-flex items-center gap-1 text-brazil-green font-semibold text-sm pointer-events-none group-hover:gap-2 transition-all">
+          <span data-lang-content="en">Read More</span>
+          <span data-lang-content="zh">阅读更多</span>
+          <span data-lang-content="pt">Leia Mais</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    `;
+    return el;
+  }
+
+  function applyLang(container: HTMLElement) {
+    const lang = localStorage.getItem('lang') || 'en';
+    container.querySelectorAll('[data-lang-content]').forEach((el) => {
+      const htmlEl = el as HTMLElement;
+      htmlEl.style.display = htmlEl.dataset.langContent === lang ? '' : 'none';
+    });
+  }
+
+  let currentPage = 1;
+  let isLoading = false;
+
+  const grid = document.getElementById('articles-grid')!;
+  const skeleton = document.getElementById('skeleton-grid')!;
+  const errorEl = document.getElementById('articles-error')!;
+  const loadMoreContainer = document.getElementById('load-more-container')!;
+  const loadMoreBtn = document.getElementById('load-more-btn') as HTMLButtonElement;
+  const loadMoreIcon = document.getElementById('load-more-icon')!;
+  const loadMoreSpinner = document.getElementById('load-more-spinner')!;
+
+  async function fetchArticles(page: number) {
+    const res = await fetch(`${API_URL}?page=${page}&limit=${LIMIT}`, {
+      headers: { Authorization: `Bearer ${SUPABASE_ANON_KEY}` },
+    });
+    if (!res.ok) throw new Error('fetch failed');
+    return res.json();
+  }
+
+  async function loadMore() {
+    if (isLoading) return;
+    isLoading = true;
+    loadMoreBtn.disabled = true;
+    loadMoreIcon.classList.add('hidden');
+    loadMoreSpinner.classList.remove('hidden');
+
+    try {
+      const data = await fetchArticles(currentPage);
+      const cards = (data.articles || []).map(createArticleCard);
+      cards.forEach((card: HTMLElement) => grid.appendChild(card));
+
+      requestAnimationFrame(() => {
+        cards.forEach((card: HTMLElement, i: number) => {
+          setTimeout(() => {
+            card.classList.remove('opacity-0', 'translate-y-4');
+            applyLang(card);
+          }, i * 60);
+        });
+      });
+
+      currentPage++;
+
+      if (!data.hasMore) {
+        loadMoreContainer.classList.add('hidden');
+      }
+    } finally {
+      isLoading = false;
+      loadMoreBtn.disabled = false;
+      loadMoreIcon.classList.remove('hidden');
+      loadMoreSpinner.classList.add('hidden');
+    }
+  }
+
+  async function init() {
+    try {
+      const data = await fetchArticles(1);
+      skeleton.classList.add('hidden');
+      grid.classList.remove('hidden');
+
+      const cards = (data.articles || []).map(createArticleCard);
+      cards.forEach((card: HTMLElement) => grid.appendChild(card));
+
+      requestAnimationFrame(() => {
+        cards.forEach((card: HTMLElement, i: number) => {
+          setTimeout(() => {
+            card.classList.remove('opacity-0', 'translate-y-4');
+            applyLang(card);
+          }, i * 80);
+        });
+      });
+
+      currentPage = 2;
+
+      if (data.hasMore) {
+        loadMoreContainer.classList.remove('hidden');
+      }
+    } catch {
+      skeleton.classList.add('hidden');
+      errorEl.classList.remove('hidden');
+    }
+  }
+
+  loadMoreBtn.addEventListener('click', loadMore);
+
+  window.addEventListener('langchange', () => {
+    grid.querySelectorAll('article').forEach((card) => applyLang(card as HTMLElement));
+  });
+
+  init();
+</script>
