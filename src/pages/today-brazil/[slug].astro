@@ -1,20 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { fetchAllArticles } from '../../lib/supabase';
+import { fetchAllArticles, fetchArticleBySlug } from '../../lib/supabase';
 
-export async function getStaticPaths() {
-  const articles = await fetchAllArticles();
-  const slugMap: Record<string, { title_en: string; slug: string }> = {};
-  for (const a of articles) {
-    slugMap[a.slug] = { title_en: a.title_en, slug: a.slug };
-  }
-  return articles.map((article) => ({
-    params: { slug: article.slug },
-    props: { article, slugMap },
-  }));
+const { slug } = Astro.params;
+
+if (!slug) {
+  return Astro.redirect('/today-brazil');
 }
 
-const { article, slugMap } = Astro.props;
+const [article, allArticles] = await Promise.all([
+  fetchArticleBySlug(slug),
+  fetchAllArticles(),
+]);
+
+if (!article) {
+  return Astro.redirect('/today-brazil');
+}
+
+const slugMap: Record<string, { title_en: string; slug: string }> = {};
+for (const a of allArticles) {
+  slugMap[a.slug] = { title_en: a.title_en, slug: a.slug };
+}
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr + 'T12:00:00Z');

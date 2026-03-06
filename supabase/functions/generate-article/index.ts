@@ -64,14 +64,6 @@ Deno.serve(async (req: Request) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    const openaiKey = Deno.env.get("OPENAI_API_KEY");
-    if (!openaiKey) {
-      return new Response(JSON.stringify({ error: "OPENAI_API_KEY not configured" }), {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-
     const topicEntry = TOPICS[Math.floor(Math.random() * TOPICS.length)];
     const today = new Date().toISOString().split('T')[0];
 
@@ -105,49 +97,27 @@ Return a JSON object with exactly these fields:
 
 Return ONLY the JSON object, no markdown code blocks.`;
 
-    const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${openaiKey}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.7,
-        max_tokens: 4000,
-      }),
+    const session = new Supabase.ai.Session('claude-haiku-4');
+    const aiResponse = await session.run(prompt, {
+      mode: 'json',
     });
 
-    if (!openaiRes.ok) {
-      const err = await openaiRes.text();
-      return new Response(JSON.stringify({ error: `OpenAI error: ${err}` }), {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-
-    const openaiData = await openaiRes.json();
-    const content = openaiData.choices?.[0]?.message?.content;
-    if (!content) {
-      return new Response(JSON.stringify({ error: "No content from OpenAI" }), {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-
     let article: Record<string, string>;
-    try {
-      article = JSON.parse(content);
-    } catch {
-      const match = content.match(/\{[\s\S]*\}/);
-      if (!match) {
-        return new Response(JSON.stringify({ error: "Failed to parse OpenAI response as JSON" }), {
-          status: 500,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
+    if (typeof aiResponse === 'string') {
+      try {
+        article = JSON.parse(aiResponse);
+      } catch {
+        const match = aiResponse.match(/\{[\s\S]*\}/);
+        if (!match) {
+          return new Response(JSON.stringify({ error: "Failed to parse AI response as JSON", raw: aiResponse }), {
+            status: 500,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
+        article = JSON.parse(match[0]);
       }
-      article = JSON.parse(match[0]);
+    } else {
+      article = aiResponse as Record<string, string>;
     }
 
     const slug = generateSlug(article.title_en);
