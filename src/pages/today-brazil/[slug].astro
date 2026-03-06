@@ -1,12 +1,25 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { articles } from '../../data/articles';
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const { createClient } = await import('@supabase/supabase-js');
+  const supabase = createClient(
+    import.meta.env.VITE_SUPABASE_URL,
+    import.meta.env.VITE_SUPABASE_ANON_KEY
+  );
+
+  const { data: allArticles } = await supabase
+    .from('articles')
+    .select('*')
+    .eq('section', 'today-brazil')
+    .order('published_date', { ascending: false });
+
+  const articles = allArticles ?? [];
   const slugMap: Record<string, { title_en: string; slug: string }> = {};
   for (const a of articles) {
     slugMap[a.slug] = { title_en: a.title_en, slug: a.slug };
   }
+
   return articles.map((article) => ({
     params: { slug: article.slug },
     props: { article, slugMap },
@@ -16,10 +29,9 @@ export function getStaticPaths() {
 const { article, slugMap } = Astro.props;
 
 function formatDate(dateStr: string) {
-  const d = new Date(dateStr);
-  const date = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  const time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
-  return `${date} ${time}`;
+  const clean = dateStr.includes('T') ? dateStr.split('T')[0] : dateStr;
+  const d = new Date(clean + 'T12:00:00Z');
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 const tagColorMap: Record<string, string> = {
