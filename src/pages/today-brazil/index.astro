@@ -1,9 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import BlogCard from '../../components/BlogCard.astro';
-import { fetchAllArticles } from '../../lib/supabase';
+import { articles } from '../../data/articles';
 
-const posts = await fetchAllArticles();
+const posts = articles;
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr + 'T12:00:00Z');

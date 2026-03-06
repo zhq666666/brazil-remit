@@ -3,10 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import CountryCard from '../components/CountryCard.astro';
 import BlogCard from '../components/BlogCard.astro';
 import FaqSection from '../components/FaqSection.astro';
-import { fetchAllArticles } from '../lib/supabase';
+import { getLatestArticles } from '../data/articles';
 
-const allArticles = await fetchAllArticles();
-const latestPosts = allArticles.slice(0, 3);
+const latestPosts = getLatestArticles(3);
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr + 'T12:00:00Z');
