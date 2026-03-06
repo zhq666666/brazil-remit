@@ -12,7 +12,13 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const githubToken = Deno.env.get("GITHUB_TOKEN") ?? "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";
+    const githubToken = Deno.env.get("Brazil_publish");
+    if (!githubToken) {
+      return new Response(JSON.stringify({ error: "Missing Brazil_publish secret" }), {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
 
     const response = await fetch(
