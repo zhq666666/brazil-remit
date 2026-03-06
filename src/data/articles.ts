@@ -18,7 +18,7 @@ export interface Article {
 
 export const articles: Article[] = [
   {
-    slug: `brazil-to-china-remittance-guide-best-ways-to-send-brl-to-cn-1772777401377`,
+    slug: `brazil-to-china-remittance-guide-best-ways-to-send-brl-to-cn-1772790602457`,
     tag: `Remittance`,
     published_date: `2026-03-06`,
     image_url: `https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop`,
@@ -43,37 +43,8 @@ export const articles: Article[] = [
 <p>O <a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">serviço Brasil-China da PandaRemit</a> é especificamente projetado para este corredor. Ele oferece taxas competitivas de mercado médio, tarifas transparentes e transferências que normalmente liquidam em 1-2 dias úteis para contas bancárias chinesas. Isso se compara favoravelmente às transferências bancárias tradicionais que podem levar 3-5 dias e cobrar 3-5% em taxas.</p>
 <p>Considerações importantes para transferências Brasil-China: as regulamentações de moeda estrangeira da China exigem que as transferências em CNY para contas individuais estejam dentro de certos limites anuais. Transferências comerciais têm requisitos diferentes. A equipe de compliance da PandaRemit lida com essas nuances regulatórias automaticamente, reduzindo o atrito para os remetentes.</p>
 <p>Com o volume comercial Brasil-China esperado para continuar crescendo em 2026, o corredor de remessas só se tornará mais importante. Seja você estudante, profissional ou empresário, usar um serviço dedicado a esse corredor economizará tanto dinheiro quanto tempo.</p>`,
-    prev_slug: `brazilian-communities-abroad-how-the-diaspora-connects-finan-1772777100697`,
-    next_slug: `brazils-remittance-market-in-2026-growth-competition-and-opp-1772777700718`,
-  },
-  {
-    slug: `pix-international-brazils-payment-revolution-reaches-the-wor-1772766904534`,
-    tag: `Technology`,
-    published_date: `2026-03-06`,
-    image_url: `https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop`,
-    title_en: `PIX International: Brazil's Payment Revolution Reaches the World in 2026`,
-    title_zh: `国际PIX：巴西支付革命在2026年走向世界`,
-    title_pt: `PIX Internacional: A Revolução dos Pagamentos do Brasil Alcança o Mundo em 2026`,
-    excerpt_en: `Brazil's PIX instant payment system is expanding internationally. Here's what this means for remittance senders and how it compares to established transfer platforms.`,
-    excerpt_zh: `巴西的PIX即时支付系统正在向国际扩张。以下是这对汇款发送者意味着什么，以及它与已建立的转账平台的比较。`,
-    excerpt_pt: `O sistema de pagamento instantâneo PIX do Brasil está se expandindo internacionalmente. Veja o que isso significa para os remetentes e como se compara às plataformas de transferência estabelecidas.`,
-    body_en: `<p>Since its launch in 2020, PIX has transformed how Brazilians pay domestically — processing over 4 billion transactions per month by 2026. Now, the Banco Central do Brasil is pushing to extend PIX's reach internationally, creating new possibilities for cross-border money movement.</p>
-<p>The international PIX initiative aims to establish interoperability agreements with payment systems in other countries, particularly those with large Brazilian diaspora communities. Early discussions have focused on integration with Japan's JZen system and potential agreements with European payment networks.</p>
-<p>For Brazilians sending money to <a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Portugal</a> or the <a href="https://www.pandaremit.com/en/bra/send-money-to-uk" target="_blank" rel="noopener" class="text-brazil-green hover:underline">United Kingdom</a>, international PIX could eventually offer near-instant settlement at low cost. However, full implementation is still years away, and the regulatory frameworks required are complex.</p>
-<p>In the meantime, specialized platforms like PandaRemit continue to offer the best combination of speed, cost, and reliability for international transfers. PandaRemit has invested heavily in direct banking integrations across key corridors, enabling same-day or next-day delivery to most major destinations.</p>
-<p>The fintech landscape in Brazil continues to evolve rapidly. Open banking regulations, digital wallets, and now international PIX are reshaping the competitive environment — ultimately benefiting consumers through lower fees and faster transfers.</p>`,
-    body_zh: `<p>自2020年推出以来，PIX彻底改变了巴西人的国内支付方式——到2026年每月处理超过40亿笔交易。现在，巴西中央银行正在推动将PIX的覆盖范围扩展到国际，为跨境资金流动创造新的可能性。</p>
-<p>国际PIX计划旨在与其他国家的支付系统建立互操作性协议，特别是那些拥有大量巴西侨民社区的国家。早期讨论集中在与日本JZen系统的整合以及与欧洲支付网络的潜在协议上。</p>
-<p>对于向<a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">葡萄牙</a>或<a href="https://www.pandaremit.com/en/bra/send-money-to-uk" target="_blank" rel="noopener" class="text-brazil-green hover:underline">英国</a>汇款的巴西人来说，国际PIX最终可能以低成本提供近乎即时的结算。然而，全面实施仍需数年时间，所需的监管框架也很复杂。</p>
-<p>与此同时，像熊猫速汇这样的专业平台继续为国际转账提供速度、成本和可靠性的最佳组合。熊猫速汇在关键汇款走廊的直接银行整合方面投入大量资金，使大多数主要目的地能够当天或次日到账。</p>
-<p>巴西金融科技格局继续快速演变。开放银行法规、数字钱包，现在还有国际PIX正在重塑竞争环境——最终通过降低费用和加快转账速度让消费者受益。</p>`,
-    body_pt: `<p>Desde seu lançamento em 2020, o PIX transformou a forma como os brasileiros pagam domesticamente — processando mais de 4 bilhões de transações por mês em 2026. Agora, o Banco Central do Brasil está trabalhando para estender o alcance do PIX internacionalmente, criando novas possibilidades para movimentação de dinheiro transfronteiriça.</p>
-<p>A iniciativa PIX internacional visa estabelecer acordos de interoperabilidade com sistemas de pagamento em outros países, particularmente aqueles com grandes comunidades da diáspora brasileira. As discussões iniciais se concentraram na integração com o sistema JZen do Japão e potenciais acordos com redes de pagamento europeias.</p>
-<p>Para brasileiros enviando dinheiro para <a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Portugal</a> ou para o <a href="https://www.pandaremit.com/en/bra/send-money-to-uk" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Reino Unido</a>, o PIX internacional poderá eventualmente oferecer liquidação quase instantânea a baixo custo. No entanto, a implementação completa ainda está a anos de distância, e os frameworks regulatórios necessários são complexos.</p>
-<p>Enquanto isso, plataformas especializadas como a PandaRemit continuam oferecendo a melhor combinação de velocidade, custo e confiabilidade para transferências internacionais. A PandaRemit investiu fortemente em integrações bancárias diretas nos principais corredores, permitindo entrega no mesmo dia ou no dia seguinte para a maioria dos destinos.</p>
-<p>O cenário de fintechs no Brasil continua evoluindo rapidamente. Regulamentações de open banking, carteiras digitais e agora o PIX internacional estão remodelando o ambiente competitivo — beneficiando os consumidores com taxas mais baixas e transferências mais rápidas.</p>`,
-    prev_slug: `brazil-to-hong-kong-remittances-trends-costs-and-best-practi-1772766784340`,
-    next_slug: `how-to-send-money-from-brazil-to-asia-2026-complete-guide-1772767202072`,
+    prev_slug: `brazilian-festivals-and-finance-how-cultural-moments-drive-r-1772790303460`,
+    next_slug: `pix-international-brazils-payment-revolution-reaches-the-wor-1772790901474`,
   },
   {
     slug: `how-to-send-money-from-brazil-to-asia-2026-complete-guide-1772767202072`,
@@ -662,6 +633,35 @@ export const articles: Article[] = [
     next_slug: `brazilian-communities-abroad-how-the-diaspora-connects-finan-1772777100697`,
   },
   {
+    slug: `brazil-to-china-remittance-guide-best-ways-to-send-brl-to-cn-1772777401377`,
+    tag: `Remittance`,
+    published_date: `2026-03-06`,
+    image_url: `https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop`,
+    title_en: `Brazil to China Remittance Guide: Best Ways to Send BRL to CNY in 2026`,
+    title_zh: `巴西到中国汇款指南：2026年从BRL兑CNY最佳方式`,
+    title_pt: `Guia de Remessa Brasil-China: Melhores Formas de Enviar BRL para CNY em 2026`,
+    excerpt_en: `The Brazil-China remittance corridor is one of the most active in South America. Discover the best platforms, rates, and strategies for transferring money between these two powerhouse economies.`,
+    excerpt_zh: `巴西-中国汇款走廊是南美洲最活跃的走廊之一。了解在这两个强大经济体之间转账的最佳平台、汇率和策略。`,
+    excerpt_pt: `O corredor de remessas Brasil-China é um dos mais ativos da América do Sul. Descubra as melhores plataformas, taxas e estratégias para transferir dinheiro entre essas duas economias poderosas.`,
+    body_en: `<p>The economic relationship between Brazil and China has grown enormously over the past decade, making it the most significant bilateral trade partnership for Brazil. This trade relationship also drives substantial money flows in both directions — from Brazilian businesses paying Chinese suppliers, to Chinese students and professionals in Brazil supporting family back home.</p>
+<p>Sending BRL to CNY presents unique challenges and opportunities. The two currencies don't trade directly in most markets, meaning most transfers route through USD as an intermediate currency, which can add to costs. Specialized platforms have solved this by establishing direct BRL-CNY corridors.</p>
+<p><a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">PandaRemit's Brazil-to-China service</a> is specifically designed for this corridor. It offers competitive mid-market rates, transparent fees, and transfers that typically settle within 1-2 business days to Chinese bank accounts. This compares favorably to traditional bank wires that can take 3-5 days and charge 3-5% in fees.</p>
+<p>Key considerations for Brazil-China transfers: China's foreign currency regulations require that CNY transfers to individual accounts be within certain annual limits. Business transfers have different requirements. PandaRemit's compliance team handles these regulatory nuances automatically, reducing friction for senders.</p>
+<p>With Brazil-China trade volume expected to continue growing in 2026, the remittance corridor will only become more important. Whether you're a student, professional, or business owner, using a dedicated service for this corridor will save you both money and time.</p>`,
+    body_zh: `<p>在过去十年中，巴西和中国之间的经济关系大幅增长，使其成为巴西最重要的双边贸易伙伴关系。这种贸易关系也推动了双向大量资金流动——从巴西企业支付中国供应商，到在巴西的中国学生和专业人士向国内家人提供支持。</p>
+<p>从BRL兑CNY面临独特的挑战和机遇。这两种货币在大多数市场上不直接交易，意味着大多数转账通过美元作为中间货币路由，这可能增加成本。专业平台通过建立直接的BRL-CNY走廊解决了这一问题。</p>
+<p><a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">熊猫速汇的巴西到中国服务</a>专为这条走廊设计。它提供具有竞争力的中间市场汇率、透明费用，转账通常在1-2个工作日内到达中国银行账户。与需要3-5天且收取3-5%手续费的传统银行电汇相比，这非常有竞争力。</p>
+<p>巴西-中国转账的关键注意事项：中国外汇法规要求向个人账户的人民币转账在一定年度限额内。商业转账有不同要求。熊猫速汇的合规团队自动处理这些监管细节，减少发送者的摩擦。</p>
+<p>随着巴西-中国贸易额预计在2026年继续增长，汇款走廊只会变得更加重要。无论您是学生、专业人士还是企业主，使用专门服务于这条走廊的平台将为您节省金钱和时间。</p>`,
+    body_pt: `<p>A relação econômica entre Brasil e China cresceu enormemente na última década, tornando-se a parceria comercial bilateral mais significativa para o Brasil. Essa relação comercial também impulsiona fluxos substanciais de dinheiro em ambas as direções — de empresas brasileiras pagando fornecedores chineses a estudantes e profissionais chineses no Brasil apoiando suas famílias.</p>
+<p>Enviar BRL para CNY apresenta desafios e oportunidades únicos. As duas moedas não são negociadas diretamente na maioria dos mercados, o que significa que a maioria das transferências passa pelo USD como moeda intermediária, o que pode aumentar os custos. Plataformas especializadas resolveram isso estabelecendo corredores diretos BRL-CNY.</p>
+<p>O <a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">serviço Brasil-China da PandaRemit</a> é especificamente projetado para este corredor. Ele oferece taxas competitivas de mercado médio, tarifas transparentes e transferências que normalmente liquidam em 1-2 dias úteis para contas bancárias chinesas. Isso se compara favoravelmente às transferências bancárias tradicionais que podem levar 3-5 dias e cobrar 3-5% em taxas.</p>
+<p>Considerações importantes para transferências Brasil-China: as regulamentações de moeda estrangeira da China exigem que as transferências em CNY para contas individuais estejam dentro de certos limites anuais. Transferências comerciais têm requisitos diferentes. A equipe de compliance da PandaRemit lida com essas nuances regulatórias automaticamente, reduzindo o atrito para os remetentes.</p>
+<p>Com o volume comercial Brasil-China esperado para continuar crescendo em 2026, o corredor de remessas só se tornará mais importante. Seja você estudante, profissional ou empresário, usar um serviço dedicado a esse corredor economizará tanto dinheiro quanto tempo.</p>`,
+    prev_slug: `brazilian-communities-abroad-how-the-diaspora-connects-finan-1772777100697`,
+    next_slug: `brazils-remittance-market-in-2026-growth-competition-and-opp-1772777700718`,
+  },
+  {
     slug: `mar-06`,
     tag: `Economy`,
     published_date: `2026-03-06`,
@@ -1141,6 +1141,35 @@ export const articles: Article[] = [
 <p>Olhando para frente, analistas acompanham de perto o saldo comercial do Brasil e o desempenho das exportações de commodities como indicadores-chave da força do BRL. As exportações agrícolas — especialmente soja e café — continuam sendo uma importante fonte de entrada de dólares que sustenta o valor do real.</p>`,
     prev_slug: `5-ways-to-save-more-when-sending-money-from-brazil-in-2026-1772788202334`,
     next_slug: `brazils-remittance-market-in-2026-growth-competition-and-opp-1772788800808`,
+  },
+  {
+    slug: `pix-international-brazils-payment-revolution-reaches-the-wor-1772790901474`,
+    tag: `Technology`,
+    published_date: `2026-03-06`,
+    image_url: `https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop`,
+    title_en: `PIX International: Brazil's Payment Revolution Reaches the World in 2026`,
+    title_zh: `国际PIX：巴西支付革命在2026年走向世界`,
+    title_pt: `PIX Internacional: A Revolução dos Pagamentos do Brasil Alcança o Mundo em 2026`,
+    excerpt_en: `Brazil's PIX instant payment system is expanding internationally. Here's what this means for remittance senders and how it compares to established transfer platforms.`,
+    excerpt_zh: `巴西的PIX即时支付系统正在向国际扩张。以下是这对汇款发送者意味着什么，以及它与已建立的转账平台的比较。`,
+    excerpt_pt: `O sistema de pagamento instantâneo PIX do Brasil está se expandindo internacionalmente. Veja o que isso significa para os remetentes e como se compara às plataformas de transferência estabelecidas.`,
+    body_en: `<p>Since its launch in 2020, PIX has transformed how Brazilians pay domestically — processing over 4 billion transactions per month by 2026. Now, the Banco Central do Brasil is pushing to extend PIX's reach internationally, creating new possibilities for cross-border money movement.</p>
+<p>The international PIX initiative aims to establish interoperability agreements with payment systems in other countries, particularly those with large Brazilian diaspora communities. Early discussions have focused on integration with Japan's JZen system and potential agreements with European payment networks.</p>
+<p>For Brazilians sending money to <a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Portugal</a> or the <a href="https://www.pandaremit.com/en/bra/send-money-to-uk" target="_blank" rel="noopener" class="text-brazil-green hover:underline">United Kingdom</a>, international PIX could eventually offer near-instant settlement at low cost. However, full implementation is still years away, and the regulatory frameworks required are complex.</p>
+<p>In the meantime, specialized platforms like PandaRemit continue to offer the best combination of speed, cost, and reliability for international transfers. PandaRemit has invested heavily in direct banking integrations across key corridors, enabling same-day or next-day delivery to most major destinations.</p>
+<p>The fintech landscape in Brazil continues to evolve rapidly. Open banking regulations, digital wallets, and now international PIX are reshaping the competitive environment — ultimately benefiting consumers through lower fees and faster transfers.</p>`,
+    body_zh: `<p>自2020年推出以来，PIX彻底改变了巴西人的国内支付方式——到2026年每月处理超过40亿笔交易。现在，巴西中央银行正在推动将PIX的覆盖范围扩展到国际，为跨境资金流动创造新的可能性。</p>
+<p>国际PIX计划旨在与其他国家的支付系统建立互操作性协议，特别是那些拥有大量巴西侨民社区的国家。早期讨论集中在与日本JZen系统的整合以及与欧洲支付网络的潜在协议上。</p>
+<p>对于向<a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">葡萄牙</a>或<a href="https://www.pandaremit.com/en/bra/send-money-to-uk" target="_blank" rel="noopener" class="text-brazil-green hover:underline">英国</a>汇款的巴西人来说，国际PIX最终可能以低成本提供近乎即时的结算。然而，全面实施仍需数年时间，所需的监管框架也很复杂。</p>
+<p>与此同时，像熊猫速汇这样的专业平台继续为国际转账提供速度、成本和可靠性的最佳组合。熊猫速汇在关键汇款走廊的直接银行整合方面投入大量资金，使大多数主要目的地能够当天或次日到账。</p>
+<p>巴西金融科技格局继续快速演变。开放银行法规、数字钱包，现在还有国际PIX正在重塑竞争环境——最终通过降低费用和加快转账速度让消费者受益。</p>`,
+    body_pt: `<p>Desde seu lançamento em 2020, o PIX transformou a forma como os brasileiros pagam domesticamente — processando mais de 4 bilhões de transações por mês em 2026. Agora, o Banco Central do Brasil está trabalhando para estender o alcance do PIX internacionalmente, criando novas possibilidades para movimentação de dinheiro transfronteiriça.</p>
+<p>A iniciativa PIX internacional visa estabelecer acordos de interoperabilidade com sistemas de pagamento em outros países, particularmente aqueles com grandes comunidades da diáspora brasileira. As discussões iniciais se concentraram na integração com o sistema JZen do Japão e potenciais acordos com redes de pagamento europeias.</p>
+<p>Para brasileiros enviando dinheiro para <a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Portugal</a> ou para o <a href="https://www.pandaremit.com/en/bra/send-money-to-uk" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Reino Unido</a>, o PIX internacional poderá eventualmente oferecer liquidação quase instantânea a baixo custo. No entanto, a implementação completa ainda está a anos de distância, e os frameworks regulatórios necessários são complexos.</p>
+<p>Enquanto isso, plataformas especializadas como a PandaRemit continuam oferecendo a melhor combinação de velocidade, custo e confiabilidade para transferências internacionais. A PandaRemit investiu fortemente em integrações bancárias diretas nos principais corredores, permitindo entrega no mesmo dia ou no dia seguinte para a maioria dos destinos.</p>
+<p>O cenário de fintechs no Brasil continua evoluindo rapidamente. Regulamentações de open banking, carteiras digitais e agora o PIX internacional estão remodelando o ambiente competitivo — beneficiando os consumidores com taxas mais baixas e transferências mais rápidas.</p>`,
+    prev_slug: `brazil-to-china-remittance-guide-best-ways-to-send-brl-to-cn-1772790602457`,
+    next_slug: null,
   },
   {
     slug: `5-ways-to-save-more-when-sending-money-from-brazil-in-2026-1772778901174`,
@@ -2039,35 +2068,6 @@ export const articles: Article[] = [
     next_slug: `brazils-remittance-market-in-2026-growth-competition-and-opp-1772785201998`,
   },
   {
-    slug: `brazil-to-china-remittance-guide-best-ways-to-send-brl-to-cn-1772790602457`,
-    tag: `Remittance`,
-    published_date: `2026-03-06`,
-    image_url: `https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop`,
-    title_en: `Brazil to China Remittance Guide: Best Ways to Send BRL to CNY in 2026`,
-    title_zh: `巴西到中国汇款指南：2026年从BRL兑CNY最佳方式`,
-    title_pt: `Guia de Remessa Brasil-China: Melhores Formas de Enviar BRL para CNY em 2026`,
-    excerpt_en: `The Brazil-China remittance corridor is one of the most active in South America. Discover the best platforms, rates, and strategies for transferring money between these two powerhouse economies.`,
-    excerpt_zh: `巴西-中国汇款走廊是南美洲最活跃的走廊之一。了解在这两个强大经济体之间转账的最佳平台、汇率和策略。`,
-    excerpt_pt: `O corredor de remessas Brasil-China é um dos mais ativos da América do Sul. Descubra as melhores plataformas, taxas e estratégias para transferir dinheiro entre essas duas economias poderosas.`,
-    body_en: `<p>The economic relationship between Brazil and China has grown enormously over the past decade, making it the most significant bilateral trade partnership for Brazil. This trade relationship also drives substantial money flows in both directions — from Brazilian businesses paying Chinese suppliers, to Chinese students and professionals in Brazil supporting family back home.</p>
-<p>Sending BRL to CNY presents unique challenges and opportunities. The two currencies don't trade directly in most markets, meaning most transfers route through USD as an intermediate currency, which can add to costs. Specialized platforms have solved this by establishing direct BRL-CNY corridors.</p>
-<p><a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">PandaRemit's Brazil-to-China service</a> is specifically designed for this corridor. It offers competitive mid-market rates, transparent fees, and transfers that typically settle within 1-2 business days to Chinese bank accounts. This compares favorably to traditional bank wires that can take 3-5 days and charge 3-5% in fees.</p>
-<p>Key considerations for Brazil-China transfers: China's foreign currency regulations require that CNY transfers to individual accounts be within certain annual limits. Business transfers have different requirements. PandaRemit's compliance team handles these regulatory nuances automatically, reducing friction for senders.</p>
-<p>With Brazil-China trade volume expected to continue growing in 2026, the remittance corridor will only become more important. Whether you're a student, professional, or business owner, using a dedicated service for this corridor will save you both money and time.</p>`,
-    body_zh: `<p>在过去十年中，巴西和中国之间的经济关系大幅增长，使其成为巴西最重要的双边贸易伙伴关系。这种贸易关系也推动了双向大量资金流动——从巴西企业支付中国供应商，到在巴西的中国学生和专业人士向国内家人提供支持。</p>
-<p>从BRL兑CNY面临独特的挑战和机遇。这两种货币在大多数市场上不直接交易，意味着大多数转账通过美元作为中间货币路由，这可能增加成本。专业平台通过建立直接的BRL-CNY走廊解决了这一问题。</p>
-<p><a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">熊猫速汇的巴西到中国服务</a>专为这条走廊设计。它提供具有竞争力的中间市场汇率、透明费用，转账通常在1-2个工作日内到达中国银行账户。与需要3-5天且收取3-5%手续费的传统银行电汇相比，这非常有竞争力。</p>
-<p>巴西-中国转账的关键注意事项：中国外汇法规要求向个人账户的人民币转账在一定年度限额内。商业转账有不同要求。熊猫速汇的合规团队自动处理这些监管细节，减少发送者的摩擦。</p>
-<p>随着巴西-中国贸易额预计在2026年继续增长，汇款走廊只会变得更加重要。无论您是学生、专业人士还是企业主，使用专门服务于这条走廊的平台将为您节省金钱和时间。</p>`,
-    body_pt: `<p>A relação econômica entre Brasil e China cresceu enormemente na última década, tornando-se a parceria comercial bilateral mais significativa para o Brasil. Essa relação comercial também impulsiona fluxos substanciais de dinheiro em ambas as direções — de empresas brasileiras pagando fornecedores chineses a estudantes e profissionais chineses no Brasil apoiando suas famílias.</p>
-<p>Enviar BRL para CNY apresenta desafios e oportunidades únicos. As duas moedas não são negociadas diretamente na maioria dos mercados, o que significa que a maioria das transferências passa pelo USD como moeda intermediária, o que pode aumentar os custos. Plataformas especializadas resolveram isso estabelecendo corredores diretos BRL-CNY.</p>
-<p>O <a href="https://www.pandaremit.com/en/bra/send-money-to-china" target="_blank" rel="noopener" class="text-brazil-green hover:underline">serviço Brasil-China da PandaRemit</a> é especificamente projetado para este corredor. Ele oferece taxas competitivas de mercado médio, tarifas transparentes e transferências que normalmente liquidam em 1-2 dias úteis para contas bancárias chinesas. Isso se compara favoravelmente às transferências bancárias tradicionais que podem levar 3-5 dias e cobrar 3-5% em taxas.</p>
-<p>Considerações importantes para transferências Brasil-China: as regulamentações de moeda estrangeira da China exigem que as transferências em CNY para contas individuais estejam dentro de certos limites anuais. Transferências comerciais têm requisitos diferentes. A equipe de compliance da PandaRemit lida com essas nuances regulatórias automaticamente, reduzindo o atrito para os remetentes.</p>
-<p>Com o volume comercial Brasil-China esperado para continuar crescendo em 2026, o corredor de remessas só se tornará mais importante. Seja você estudante, profissional ou empresário, usar um serviço dedicado a esse corredor economizará tanto dinheiro quanto tempo.</p>`,
-    prev_slug: `brazilian-festivals-and-finance-how-cultural-moments-drive-r-1772790303460`,
-    next_slug: null,
-  },
-  {
     slug: `how-to-send-money-from-brazil-to-asia-2026-complete-guide-1772781000901`,
     tag: `Guide`,
     published_date: `2026-03-06`,
@@ -2471,6 +2471,35 @@ export const articles: Article[] = [
 <p><strong>5. Use aplicativos de remessa especializados em vez de bancos.</strong> Os bancos brasileiros tradicionais geralmente cobram 2-4% de spread na taxa de câmbio mais taxas adicionais para transferências internacionais. Plataformas especializadas consistentemente oferecem melhores taxas e tempos de entrega mais rápidos, geralmente em 24 horas.</p>`,
     prev_slug: `pix-international-brazils-payment-revolution-reaches-the-wor-1772767501376`,
     next_slug: `how-to-send-money-from-brazil-to-asia-2026-complete-guide-1772768102302`,
+  },
+  {
+    slug: `pix-international-brazils-payment-revolution-reaches-the-wor-1772766904534`,
+    tag: `Technology`,
+    published_date: `2026-03-06`,
+    image_url: `https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop`,
+    title_en: `PIX International: Brazil's Payment Revolution Reaches the World in 2026`,
+    title_zh: `国际PIX：巴西支付革命在2026年走向世界`,
+    title_pt: `PIX Internacional: A Revolução dos Pagamentos do Brasil Alcança o Mundo em 2026`,
+    excerpt_en: `Brazil's PIX instant payment system is expanding internationally. Here's what this means for remittance senders and how it compares to established transfer platforms.`,
+    excerpt_zh: `巴西的PIX即时支付系统正在向国际扩张。以下是这对汇款发送者意味着什么，以及它与已建立的转账平台的比较。`,
+    excerpt_pt: `O sistema de pagamento instantâneo PIX do Brasil está se expandindo internacionalmente. Veja o que isso significa para os remetentes e como se compara às plataformas de transferência estabelecidas.`,
+    body_en: `<p>Since its launch in 2020, PIX has transformed how Brazilians pay domestically — processing over 4 billion transactions per month by 2026. Now, the Banco Central do Brasil is pushing to extend PIX's reach internationally, creating new possibilities for cross-border money movement.</p>
+<p>The international PIX initiative aims to establish interoperability agreements with payment systems in other countries, particularly those with large Brazilian diaspora communities. Early discussions have focused on integration with Japan's JZen system and potential agreements with European payment networks.</p>
+<p>For Brazilians sending money to <a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Portugal</a> or the <a href="https://www.pandaremit.com/en/bra/send-money-to-uk" target="_blank" rel="noopener" class="text-brazil-green hover:underline">United Kingdom</a>, international PIX could eventually offer near-instant settlement at low cost. However, full implementation is still years away, and the regulatory frameworks required are complex.</p>
+<p>In the meantime, specialized platforms like PandaRemit continue to offer the best combination of speed, cost, and reliability for international transfers. PandaRemit has invested heavily in direct banking integrations across key corridors, enabling same-day or next-day delivery to most major destinations.</p>
+<p>The fintech landscape in Brazil continues to evolve rapidly. Open banking regulations, digital wallets, and now international PIX are reshaping the competitive environment — ultimately benefiting consumers through lower fees and faster transfers.</p>`,
+    body_zh: `<p>自2020年推出以来，PIX彻底改变了巴西人的国内支付方式——到2026年每月处理超过40亿笔交易。现在，巴西中央银行正在推动将PIX的覆盖范围扩展到国际，为跨境资金流动创造新的可能性。</p>
+<p>国际PIX计划旨在与其他国家的支付系统建立互操作性协议，特别是那些拥有大量巴西侨民社区的国家。早期讨论集中在与日本JZen系统的整合以及与欧洲支付网络的潜在协议上。</p>
+<p>对于向<a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">葡萄牙</a>或<a href="https://www.pandaremit.com/en/bra/send-money-to-uk" target="_blank" rel="noopener" class="text-brazil-green hover:underline">英国</a>汇款的巴西人来说，国际PIX最终可能以低成本提供近乎即时的结算。然而，全面实施仍需数年时间，所需的监管框架也很复杂。</p>
+<p>与此同时，像熊猫速汇这样的专业平台继续为国际转账提供速度、成本和可靠性的最佳组合。熊猫速汇在关键汇款走廊的直接银行整合方面投入大量资金，使大多数主要目的地能够当天或次日到账。</p>
+<p>巴西金融科技格局继续快速演变。开放银行法规、数字钱包，现在还有国际PIX正在重塑竞争环境——最终通过降低费用和加快转账速度让消费者受益。</p>`,
+    body_pt: `<p>Desde seu lançamento em 2020, o PIX transformou a forma como os brasileiros pagam domesticamente — processando mais de 4 bilhões de transações por mês em 2026. Agora, o Banco Central do Brasil está trabalhando para estender o alcance do PIX internacionalmente, criando novas possibilidades para movimentação de dinheiro transfronteiriça.</p>
+<p>A iniciativa PIX internacional visa estabelecer acordos de interoperabilidade com sistemas de pagamento em outros países, particularmente aqueles com grandes comunidades da diáspora brasileira. As discussões iniciais se concentraram na integração com o sistema JZen do Japão e potenciais acordos com redes de pagamento europeias.</p>
+<p>Para brasileiros enviando dinheiro para <a href="https://www.pandaremit.com/en/bra/send-money-to-portugal" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Portugal</a> ou para o <a href="https://www.pandaremit.com/en/bra/send-money-to-uk" target="_blank" rel="noopener" class="text-brazil-green hover:underline">Reino Unido</a>, o PIX internacional poderá eventualmente oferecer liquidação quase instantânea a baixo custo. No entanto, a implementação completa ainda está a anos de distância, e os frameworks regulatórios necessários são complexos.</p>
+<p>Enquanto isso, plataformas especializadas como a PandaRemit continuam oferecendo a melhor combinação de velocidade, custo e confiabilidade para transferências internacionais. A PandaRemit investiu fortemente em integrações bancárias diretas nos principais corredores, permitindo entrega no mesmo dia ou no dia seguinte para a maioria dos destinos.</p>
+<p>O cenário de fintechs no Brasil continua evoluindo rapidamente. Regulamentações de open banking, carteiras digitais e agora o PIX internacional estão remodelando o ambiente competitivo — beneficiando os consumidores com taxas mais baixas e transferências mais rápidas.</p>`,
+    prev_slug: `brazil-to-hong-kong-remittances-trends-costs-and-best-practi-1772766784340`,
+    next_slug: `how-to-send-money-from-brazil-to-asia-2026-complete-guide-1772767202072`,
   },
   {
     slug: `banco-centrals-2026-rules-for-international-transfers-what-c-1772668804299`,
