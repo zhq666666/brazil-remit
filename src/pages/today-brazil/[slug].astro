@@ -1,15 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { articles } from '../../data/articles';
+import { getCollection } from 'astro:content';
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const entries = await getCollection('articles');
   const slugMap: Record<string, { title_en: string; slug: string }> = {};
-  for (const a of articles) {
-    slugMap[a.slug] = { title_en: a.title_en, slug: a.slug };
+  for (const e of entries) {
+    slugMap[e.id] = { title_en: e.data.title_en, slug: e.id };
   }
-  return articles.map((article) => ({
-    params: { slug: article.slug },
-    props: { article, slugMap },
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { article: { slug: entry.id, ...entry.data }, slugMap },
   }));
 }
 

@@ -3,9 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import CountryCard from '../components/CountryCard.astro';
 import BlogCard from '../components/BlogCard.astro';
 import FaqSection from '../components/FaqSection.astro';
-import { getLatestArticles } from '../data/articles';
+import { getCollection } from 'astro:content';
 
-const latestPosts = getLatestArticles(3);
+const allEntries = await getCollection('articles');
+const latestPosts = allEntries
+  .map(e => ({ slug: e.id, ...e.data }))
+  .sort((a, b) => b.published_date.localeCompare(a.published_date))
+  .slice(0, 3);
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr + 'T12:00:00Z');
