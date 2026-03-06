@@ -35,15 +35,17 @@ Deno.serve(async (req: Request) => {
       }
     );
 
+    const responseText = await response.text();
+    const githubStatus = response.status;
+
     if (!response.ok) {
-      const text = await response.text();
-      return new Response(JSON.stringify({ error: "GitHub API error", detail: text }), {
+      return new Response(JSON.stringify({ error: "GitHub API error", status: githubStatus, detail: responseText }), {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    return new Response(JSON.stringify({ success: true, message: "Rebuild triggered" }), {
+    return new Response(JSON.stringify({ success: true, message: "Rebuild triggered", github_status: githubStatus }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
